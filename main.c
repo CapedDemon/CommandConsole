@@ -1,0 +1,142 @@
+/*Author: Shreejan Dolai
+Language: C
+*/
+
+//header files(some are inbuilt and some header files I have created to organize different codes)
+#include "change_dir_path.h"
+#include "help_file.h"
+
+#include "file_mkdr1.h"
+#include "rmdr_file.h"
+#include "make_file.h"
+#include "wrta_file.h"
+#include "wrte_file.h"
+#include "list_file.h"
+#include "calc_file.h"
+#include "pcwd_file.h"
+#include "clr_file.h"
+#include "ccwd_file.h"
+#include "remo_file.h"
+#include "date_file.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <time.h>
+
+//define the number of characters in a file
+#define SIZE 25
+
+//main program
+int main()
+{
+    //intialization to check the time
+    time_t t;
+    time(&t);
+
+    //welcome statement with time
+    printf("Welcome to C terminal.\n\nTime:%s\n(Type help for manual or you can directly start interacting with terminal)\n\n", ctime(&t));
+
+    //all the commands length are 4 characters so the command input will be taken from this variable.
+    char cmd_str[3];
+
+    int stop = 0;//intializing stop = 0 so as to stop the while loop when it is 1.
+
+    while (stop != 1)//the condition to stop the while loop.
+    {
+        char *buf;//intializing a string to print the current or working directory.
+        buf = (char *)malloc(100 * sizeof(char));//I am using malloc as I don't know how much characters are there in the directory name.
+        getcwd(buf, 100);//getcwd function is used here
+        printf("[%s] $: ", buf);
+
+        //taking the command
+        scanf("%s", cmd_str);
+
+        if (strcmp(cmd_str, "quit") == 0)
+        {
+            stop = 1;//making stop = 1 to stop the while loop. And the terminal shut downs.
+        }
+
+        else if (strcmp(cmd_str, "help") == 0)
+        {
+            help();//calling the help function in the help_file.h
+        }
+        else if (strcmp(cmd_str, "list") == 0)
+        {
+            list(); //calling the list function in the list_file.h
+        }
+        else if (strcmp(cmd_str, "date") == 0)
+        {
+            date(); //calling the date function in the date_file.h
+        }
+        else if (strcmp(cmd_str, "calc") == 0)
+        {
+            calc(); //calling the calc function in the calc_file.h
+        }
+        else if (strcmp(cmd_str, "pcwd") == 0)
+        {
+            pcwd(); //calling the pcwd function in the pcwd_file.h
+        }
+        else if (strcmp(cmd_str, "make") == 0)
+        {
+            make(); //calling the make function in the make_file.h
+        }
+        else if (strcmp(cmd_str, "wrte") == 0)
+        {
+            wrte(); //calling the wrte function in the wrte_file.h
+        }
+        else if (strcmp(cmd_str, "wrta") == 0)
+        {
+            wrta(); //calling the wrta function in the wrta_file.h
+        }
+        else if (strcmp(cmd_str, "remo") == 0)
+        {
+            remo(); //calling the remo function in the remo_file.h
+        }
+        else if (strcmp(cmd_str, "ccwd") == 0)
+        {
+            ccwd(); //calling the ccwd function in the ccwd_file.h
+        }
+        else if (strcmp(cmd_str, "mkdr") == 0)
+        {
+            mkdr(); //calling the mkdr function in the file_mkdr1.h
+        }
+        else if (strcmp(cmd_str, "rmdr") == 0)
+        {
+            rmdr(); //calling the rmdr function in the rmdr_file.h
+        }
+        else if (strcmp(cmd_str, "info") == 0)
+        {
+            //It will give info. Something like wslfetch in wsl linux
+            printf("Developer: Shreejan Dolai\nLanguage: C\nEmail Id: dolaishreejan@gmail.com\n(c)All rights reserved.\n\n");
+            printf("//-------SSSSSSSSSSS----------------//\n");
+            printf("//----SSSSSSSSSSSSSSSS--------------//\n");
+            printf("//---SSSSSSSSSSSSSSSS---------------//\n");
+            printf("//--SSSSSSSSSSSSS-------------------//\n");
+            printf("//--SSSSSSSSSSSSSS------------------//\n");
+            printf("//--SSSSSSSSSSSSSSSSS---------------//\n");
+            printf("//----SSSSSSSSSSSSSSSSS-------------//\n");
+            printf("//------SSSSSSSSSSSSSSSSS-----------//\n");
+            printf("//---------SSSSSSSSSSSSSSS----------//\n");
+            printf("//----------SSSSSSSSSSSSSSS---------//\n");
+            printf("//-----------SSSSSSSSSSSSSS---------//\n");
+            printf("//-----------SSSSSSSSSSSSSS---------//\n");
+            printf("//-----------SSSSSSSSSSSSSS---------//\n");
+            printf("//---------SSSSSSSSSSSSSSS----------//\n");
+            printf("//-------SSSSSSSSSSSSSSSS-----------//\n");
+            printf("//------SSSSSSSSSSSSSSS-------------//\n");
+            printf("//---SSSSSSSSSSSSSSSS---------------//\n");
+            printf("\n\n\n\n\n\n");
+        }
+        else if (strcmp(cmd_str, "clr") == 0)
+        {
+            clearScreen(); //calling the clearScreen function in the clr_file.h
+        }
+
+        else
+        {
+            printf("Error: Wrong Command\n\tRun command which is there. Type help for information\n");
+        }
+    }
+
+    return 0;
+}
