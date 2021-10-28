@@ -1,5 +1,6 @@
-# **<h1><centre>CommandConsole</h1><centre/>**
+<p align="left"> <a href="https://www.gnu.org/software/bash/" target="_blank"> <img src="https://www.vectorlogo.zone/logos/gnu_bash/gnu_bash-icon.svg" alt="bash" width="40" height="40"/> </a>
 
+# **<h1><centre>CommandConsole</h1><centre/>**
 ### As the name suggests this is a terminal like software. Like a normal terminal in linux or command prompt in windows, it also works like the same. It is made using C language and my motive of building this software is to refresh my C language skills and to make something which can take command and work.
 
 # <b>Documentation</b>
