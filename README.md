@@ -1,4 +1,4 @@
-# <h1><centre>CommandConsole</h1><centre/>
+# **<h1><centre>CommandConsole</h1><centre/>**
 
 # As the name suggests this is a terminal like software. Like a normal terminal in linux or command prompt in windows, it also works like the same. It is made using C language and my motive of building this software is to refresh my C language skills and to make something which can take command and work.
 
@@ -49,5 +49,7 @@
 - Finally test all the commands.
 
 ## I have given one screenshot which you can refer to.
+
+![](Screeshot.jpg)
 
 ## This is all the things about my program. If you like it, then please share with others. This is a project which the begineers as well as intermediate programmers can build. Support me by following my github account. Thank you.
