@@ -54,7 +54,6 @@
 
 ![](https://github.com/Shreejan-35/CommandConsole/blob/main/Screenshot.JPG)
 
-##License
-### License is MIT.
+##License is MIT.
  
 ## This is all the things about my program. If you like it, then please share with others. This is a project which the begineers as well as intermediate programmers can build. Support me by following my github account. Thank you.
