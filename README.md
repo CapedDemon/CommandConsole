@@ -1,13 +1,14 @@
 <p align="left"> <a href="https://www.gnu.org/software/bash/" target="_blank"> <img src="https://www.vectorlogo.zone/logos/gnu_bash/gnu_bash-icon.svg" alt="bash" width="40" height="40"/> </a>
 
 # **<h1><centre>CommandConsole</h1><centre/>**
-### As the name suggests this is a terminal like software. Like a normal terminal in linux or command prompt in windows, it also works like the same. It is made using C language and my motive of building this software is to refresh my C language skills and to make something which can take command and work.
+As the name suggests this is a terminal like software. Like a normal terminal in linux or command prompt in windows, it also works like the same. It is made using C language and my motive of building this software is to refresh my C language skills and to make something which can take command and work.
 
 # <b>Documentation</b>
-## <br/>
-## The main program is written in the main.c file and the functions written there are in there individual files and I have made them header files and included them where it is necessary.
+<br/>
+The main program is written in the main.c file and the functions written there are in there individual files and I have made them header files and included them where it is necessary. All the code is written in C language. I have included a .exe file of the main.c file. I have run it in my system and it worked fine doing all the things.
 
-## <br/>
+<br/>
+
 ### The list of files are:
 - Calculator: The code is written in calc_file.h
 - Change Current Working Directory: The code is written in ccwd_file.h
@@ -24,10 +25,6 @@
 - To write something in a file: The code is written in wrte_file.h
 - To print the content of the file: The code is written in open_file.h
 
-## All the code is written in C language.
-# <br/>
-## I have included a .exe file of the main.c file. I have run it in my system and it worked fine doing all the things.
-
 ## Things to remember while executing the application:
 - Provide the correct command or else it will show "Error: Wrong Command. Run command which is there. Type help for information".
 - Type quit to stop the terminal.
@@ -38,9 +35,10 @@
 - Anyother modification will be considered.
 
 # <b>Getting Started<b/>
-### I will provide you the drive lin, from there you can download it.(This is the link to download:- 
-### https://drive.google.com/drive/folders/1POtaFczWO3kSD4VJbGggZC2vEa0EmaEt?usp=sharing)
-### If you have docker installed then it is very good. The steps to execute the software using docker are as follows:-
+I will provide you the drive lin, from there you can download it.(This is the link to download:- 
+https://drive.google.com/drive/folders/1POtaFczWO3kSD4VJbGggZC2vEa0EmaEt?usp=sharing)
+
+If you have docker installed then it is very good. The steps to execute the software using docker are as follows:-
 - type :- docker run -it commandconsole:1 (1 is the tag with the latest updates)
 - It will pull the image from the docker hub.
 - When all the things are done it will start the program. 
