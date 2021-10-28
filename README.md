@@ -38,7 +38,8 @@
 - Anyother modification will be considered.
 
 # <b>Getting Started<b/>
-### I will provide you the .exe file. From there you can download it.
+### I will provide you the drive lin, from there you can download it.(This is the link to download:- 
+### https://drive.google.com/drive/folders/1POtaFczWO3kSD4VJbGggZC2vEa0EmaEt?usp=sharing)
 ### If you have docker installed then it is very good. The steps to execute the software using docker are as follows:-
 - type :- docker run -it commandconsole:1 (1 is the tag with the latest updates)
 - It will pull the image from the docker hub.
