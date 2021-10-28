@@ -5,7 +5,7 @@ Language: C
 //header files(some are inbuilt and some header files I have created to organize different codes)
 #include "change_dir_path.h"
 #include "help_file.h"
-
+#include "open_file.h"
 #include "file_mkdr1.h"
 #include "rmdr_file.h"
 #include "make_file.h"
@@ -36,8 +36,8 @@ int main()
     //welcome statement with time
     printf("Welcome to C terminal.\n\nTime:%s\n(Type help for manual or you can directly start interacting with terminal)\n\n", ctime(&t));
 
-    //all the commands length are 4 characters so the command input will be taken from this variable.
-    char cmd_str[3];
+    //all the commands length are 5 characters so the command input will be taken from this variable.
+    char cmd_str[4];
 
     int stop = 0;//intializing stop = 0 so as to stop the while loop when it is 1.
 
@@ -106,32 +106,18 @@ int main()
         }
         else if (strcmp(cmd_str, "info") == 0)
         {
-            //It will give info. Something like wslfetch in wsl linux
+            //You can give your name here. And email address.
             printf("Developer: Shreejan Dolai\nLanguage: C\nEmail Id: dolaishreejan@gmail.com\n(c)All rights reserved.\n\n");
-            printf("//-------SSSSSSSSSSS----------------//\n");
-            printf("//----SSSSSSSSSSSSSSSS--------------//\n");
-            printf("//---SSSSSSSSSSSSSSSS---------------//\n");
-            printf("//--SSSSSSSSSSSSS-------------------//\n");
-            printf("//--SSSSSSSSSSSSSS------------------//\n");
-            printf("//--SSSSSSSSSSSSSSSSS---------------//\n");
-            printf("//----SSSSSSSSSSSSSSSSS-------------//\n");
-            printf("//------SSSSSSSSSSSSSSSSS-----------//\n");
-            printf("//---------SSSSSSSSSSSSSSS----------//\n");
-            printf("//----------SSSSSSSSSSSSSSS---------//\n");
-            printf("//-----------SSSSSSSSSSSSSS---------//\n");
-            printf("//-----------SSSSSSSSSSSSSS---------//\n");
-            printf("//-----------SSSSSSSSSSSSSS---------//\n");
-            printf("//---------SSSSSSSSSSSSSSS----------//\n");
-            printf("//-------SSSSSSSSSSSSSSSS-----------//\n");
-            printf("//------SSSSSSSSSSSSSSS-------------//\n");
-            printf("//---SSSSSSSSSSSSSSSS---------------//\n");
+            
             printf("\n\n\n\n\n\n");
         }
         else if (strcmp(cmd_str, "clr") == 0)
         {
             clearScreen(); //calling the clearScreen function in the clr_file.h
         }
-
+        else if (strcmp(cmd_str, "open") == 0){
+            openf(); //calling the open function in the open_file.h
+        }
         else
         {
             printf("Error: Wrong Command\n\tRun command which is there. Type help for information\n");

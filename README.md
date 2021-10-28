@@ -21,6 +21,7 @@
 - Remove the directory file: The code is written in rmdr_file.h
 - To append something in a file: The code is written in wrta_file.h
 - To write something in a file: The code is written in wrte_file.h
+- To print the content of the file: The code is written in open_file.h
 
 ## All the code is written in C language.
 # <br/>

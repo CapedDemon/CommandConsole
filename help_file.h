@@ -10,8 +10,8 @@ void help()
     printf(">>make - This command will make a file for you and you need to give command which type of extension do you want.\n\n");
     printf(">>remo - This command will remove a file\n\n");
     printf(">>list - This will print the files and folders in your directory\n\n");
-    printf(">>wrte - This will write in the file you will give\n\n");
-    printf(">>wrta - This will append in your file\n\n");
+    printf(">>wrte - This will write in the file you will give. Start writing the text with a space.\n\n");
+    printf(">>wrta - This will append in your file. Start writing the text with a space and tehn write all the things which you want.\nFor example - Suppose there is hello initially written. So you want write hi with a space between hello and hi,\n so you should give two spaces before writing in the terminal\n\n");
     printf(">>quit - write quit and hit enter to exit the terminal\n\n");
     printf(">>pcwd - Print Current Working Directory\n\n");
     printf(">>ccwd - Change Current Working Directory\n\n");
@@ -19,5 +19,5 @@ void help()
     printf(">>rmdr - This will remove a folder in the current directory\n\n");
     printf(">>info - This will show you the details of the STerminal\n\n");
     printf(">>clr - This will clear the screen of the terminal\n\n");
-    
+    printf(">>open - This will print the content of the file.\n\n");
 }
