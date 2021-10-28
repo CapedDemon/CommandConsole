@@ -50,6 +50,6 @@
 
 ## I have given one screenshot which you can refer to.
 
-![](Screeshot.jpg)
+![](https://github.com/Shreejan-35/CommandConsole/blob/main/Screenshot.JPG)
 
 ## This is all the things about my program. If you like it, then please share with others. This is a project which the begineers as well as intermediate programmers can build. Support me by following my github account. Thank you.
