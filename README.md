@@ -34,7 +34,6 @@
 ## <br/>
 ## Limitations and things to be done more and help required:
 - I don't know whether it can run in other softwares(like- linux, etc) as I have done this code in windows laptop. I want you all to test this.
-- It cannot print the content of the file. I want to knwo from you all, how to write the content of the in the terminal using C.
 - Anyother modification will be considered.
 
 # <b>Getting Started<b/>
