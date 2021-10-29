@@ -33,7 +33,6 @@ void openf()
             printf("%c", content);
             content = fgetc(ptr);
         }
-
     }
     printf("\n");
     fclose(ptr);

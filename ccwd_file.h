@@ -6,7 +6,6 @@
 
 void ccwd()
 {
-
     printf("Enter the path to change this directory to: \n");
     getchar();
     fgets(change_dir, 100, stdin);
