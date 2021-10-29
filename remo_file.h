@@ -7,6 +7,6 @@ void remo()
     char namr_file[30];
     printf("Enter the file name to delete: ");
     getchar();
-    gets(namr_file);
+    fgets(namr_file, 30, stdin);
     remove(namr_file);
 }

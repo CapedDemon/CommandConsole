@@ -9,7 +9,7 @@ void ccwd()
 
     printf("Enter the path to change this directory to: \n");
     getchar();
-    gets(change_dir);
+    fgets(change_dir, 100, stdin);
     if (chdir(change_dir) == 0)//implementing chdir function.
     {
         printf("successfully changed\n");

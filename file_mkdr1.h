@@ -13,7 +13,7 @@ void mkdr()
     dirname = malloc(SIZE * sizeof(char));
     printf("Enter a name of the folder:");
     getchar();
-    gets(dirname);
+    fgets(dirname, SIZE, stdin);
     check = mkdir(dirname);
 
     if (!check)

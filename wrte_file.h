@@ -9,13 +9,13 @@ void wrte()
     char name_file[30];
     getchar();
     printf("Enter file name: ");
-    gets(name_file);
+    fgets(name_file, 30, stdin);
     fp = fopen(name_file, "w");
 
     char edits[300];
     printf("Write the text what you want to be there in your file..\n");
     getchar();
-    gets(edits);
+    fgets(edits, 300, stdin);
     fprintf(fp, edits);
     fclose(fp);
 }

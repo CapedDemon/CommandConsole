@@ -12,7 +12,7 @@ void openf()
 
     //getting the name of the file
     printf("Enter the filename- ");
-    scanf("%s", name_file);
+    fgets(name_file, 100, stdin);
     getchar();
     //opening  the file in tead mode
     ptr = fopen(name_file, "r");
