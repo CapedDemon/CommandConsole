@@ -51,8 +51,6 @@ If you have docker installed then it is very good. The steps to execute the soft
 ## I have given one screenshot which you can refer to.
 
 ![](https://github.com/Shreejan-35/CommandConsole/blob/main/Screenshot.JPG)
-
-## Version - 1.1(latest)
  
 ## License is MIT.
  
