@@ -39,7 +39,7 @@ I will provide you the drive lin, from there you can download it.(This is the li
 https://drive.google.com/drive/folders/1POtaFczWO3kSD4VJbGggZC2vEa0EmaEt?usp=sharing)
 
 If you have docker installed then it is very good. The steps to execute the software using docker are as follows:-
-- type :- docker run -it commandconsole:1 (1 is the tag with the latest updates)
+- type :- docker run -it shreejan35/commandconsole:version (The latest version is available down).
 - It will pull the image from the docker hub.
 - When all the things are done it will start the program. 
 - It will be like a normal terminal. First of all type 'list' then check that all the files which are there in the github are shown there. 
@@ -52,6 +52,8 @@ If you have docker installed then it is very good. The steps to execute the soft
 
 ![](https://github.com/Shreejan-35/CommandConsole/blob/main/Screenshot.JPG)
 
+## Version - 1.1(latest)
+ 
 ## License is MIT.
  
 ## This is all the things about my program. If you like it, then please share with others. This is a project which the begineers as well as intermediate programmers can build. Support me by following my github account. Thank you.
