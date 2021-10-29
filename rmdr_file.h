@@ -14,7 +14,7 @@ void rmdr()
     
     printf("Enter a name of the folder:");
     getchar();
-    fgets(dirname, 25, stdin);
+    gets(dirname);
     check = rmdir(dirname);
 
     if (!check)

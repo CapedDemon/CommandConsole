@@ -19,5 +19,5 @@ void help()
     printf(">>rmdr - This will remove a folder in the current directory\n\n");
     printf(">>info - This will show you the details of the STerminal\n\n");
     printf(">>clr - This will clear the screen of the terminal\n\n");
-    printf(">>open - This will print the content of the file.\n\n");
+    printf(">>read - This will print the content of the file.\n\n");
 }

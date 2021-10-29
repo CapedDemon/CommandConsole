@@ -5,7 +5,7 @@ Language: C
 //header files(some are inbuilt and some header files I have created to organize different codes)
 #include "change_dir_path.h"
 #include "help_file.h"
-#include "open_file.h"
+#include "open_file1.h"
 #include "file_mkdr1.h"
 #include "rmdr_file.h"
 #include "make_file.h"
@@ -37,7 +37,7 @@ int main()
     printf("Welcome to C terminal.\n\nTime:%s\n(Type help for manual or you can directly start interacting with terminal)\n\n", ctime(&t));
 
     //all the commands length are 5 characters so the command input will be taken from this variable.
-    char cmd_str[4];
+    char cmd_str[5];
 
     int stop = 0;//intializing stop = 0 so as to stop the while loop when it is 1.
 
@@ -115,8 +115,8 @@ int main()
         {
             clearScreen(); //calling the clearScreen function in the clr_file.h
         }
-        else if (strcmp(cmd_str, "open") == 0){
-            openf(); //calling the open function in the open_file.h
+        else if (strcmp(cmd_str, "read") == 0){
+            read_file(); //calling the open function in the open_file.h
         }
         else
         {

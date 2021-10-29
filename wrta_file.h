@@ -8,12 +8,12 @@ void wrta()
     char name_file[30];
     getchar();
     printf("Enter file name: ");
-    fgets(name_file, 30, stdin);
+    gets(name_file);
     fp = fopen(name_file, "a");
     char edits[300];
     printf("Write the text you want to append in your file. Start typing with a space..\n");
     getchar();
-    fgets(edits, 300, stdin);
+    gets(edits);
     fprintf(fp, edits);
     fclose(fp);
 }

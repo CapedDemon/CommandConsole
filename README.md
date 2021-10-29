@@ -23,7 +23,7 @@ The main program is written in the main.c file and the functions written there a
 - Remove the directory file: The code is written in rmdr_file.h
 - To append something in a file: The code is written in wrta_file.h
 - To write something in a file: The code is written in wrte_file.h
-- To print the content of the file: The code is written in open_file.h
+- To print the content of the file: The code is written in open_file1.h
 
 ## Things to remember while executing the application:
 - Provide the correct command or else it will show "Error: Wrong Command. Run command which is there. Type help for information".
