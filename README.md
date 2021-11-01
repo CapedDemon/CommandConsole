@@ -24,6 +24,7 @@ The main program is written in the main.c file and the functions written there a
 - To append something in a file: The code is written in wrta_file.h
 - To write something in a file: The code is written in wrte_file.h
 - To print the content of the file: The code is written in open_file1.h
+- To change the username and password: The code is written in change_root.h
 
 ## Things to remember while executing the application:
 - Provide the correct command or else it will show "Error: Wrong Command. Run command which is there. Type help for information".
@@ -35,11 +36,9 @@ The main program is written in the main.c file and the functions written there a
 - Anyother modification will be considered.
 
 # <b>Getting Started<b/>
-I will provide you the drive lin, from there you can download it.(This is the link to download:- 
-https://drive.google.com/drive/folders/1POtaFczWO3kSD4VJbGggZC2vEa0EmaEt?usp=sharing)
 
 If you have docker installed then it is very good. The steps to execute the software using docker are as follows:-
-- type :- docker run -it shreejan35/commandconsole:version (The latest version is available down).
+- type :- docker run -it shreejan35/commandconsole:version (The latest version is available in the releases).
 - It will pull the image from the docker hub.
 - When all the things are done it will start the program. 
 - It will be like a normal terminal. First of all type 'list' then check that all the files which are there in the github are shown there. 
