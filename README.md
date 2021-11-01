@@ -3,6 +3,8 @@
 # **<h1><centre>CommandConsole</h1><centre/>**
 As the name suggests this is a terminal like software. Like a normal terminal in linux or command prompt in windows, it also works like the same. It is made using C language and my motive of building this software is to refresh my C language skills and to make something which can take command and work.
 
+![](https://github.com/Shreejan-35/CommandConsole/blob/main/images/terminal_image_social.png)
+
 # <b>Documentation</b>
 <br/>
 The main program is written in the main.c file and the functions written there are in there individual files and I have made them header files and included them where it is necessary. All the code is written in C language. I have included a .exe file of the main.c file. I have run it in my system and it worked fine doing all the things.
