@@ -1,6 +1,6 @@
 <p align="left"> <a href="https://www.gnu.org/software/bash/" target="_blank"> <img src="https://www.vectorlogo.zone/logos/gnu_bash/gnu_bash-icon.svg" alt="bash" width="40" height="40"/> </a>
 
-# **<h1><centre>CommandConsole</h1><centre/>**
+# **CommandConsole**
 As the name suggests this is a terminal like software. Like a normal terminal in linux or command prompt in windows, it also works like the same. It is made using C language and my motive of building this software is to refresh my C language skills and to make something which can take command and work.
 
 ![](https://github.com/Shreejan-35/CommandConsole/blob/main/images/terminal_image_social.png)
@@ -40,7 +40,10 @@ The main program is written in the main.c file and the functions written there a
 # <b>Getting Started<b/>
 
 If you have docker installed then it is very good. The steps to execute the software using docker are as follows:-
-- type :- docker run -it shreejan35/commandconsole:version (The latest version is available in the releases).
+- type :- 
+```
+docker run -it shreejan35/commandconsole:version (The latest version is available in the releases).
+```
 - It will pull the image from the docker hub.
 - When all the things are done it will start the program. 
 - It will be like a normal terminal. First of all type 'list' then check that all the files which are there in the github are shown there. 
