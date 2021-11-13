@@ -3,6 +3,7 @@ Language: C
 */
 
 //header files(some are inbuilt and some header files I have created to organize different codes)
+#include "copy_file.h"
 #include "change_root.h"
 #include "change_dir_path.h"
 #include "help_file.h"
@@ -49,7 +50,8 @@ void main_loop()
             stop = 1; //making stop = 1 to stop the while loop. And the terminal shut downs.
         }
 
-        else if(strcmp(cmd_str, "cnge") == 0){
+        else if (strcmp(cmd_str, "cnge") == 0)
+        {
             change(); //calling the change function in the change_root.h
         }
 
@@ -116,6 +118,9 @@ void main_loop()
         {
             read_file(); //calling the open function in the open_file.h
         }
+        else if(strcmp(cmd_str, "copy") == 0){
+            copy(); //calling the copy  fucntion in the copy_file.h
+        }
         else
         {
             printf("Error: Wrong Command\n\tRun command which is there. Type help for information\n");
@@ -142,7 +147,7 @@ int main()
     fseek(root_passwd, 0, SEEK_END);
     int size = ftell(root_passwd);
 
-    if (size == 0)//if nothing is written
+    if (size == 0) //if nothing is written
     {
         //opening the files with write mode
         FILE *wpasswd;
@@ -166,12 +171,12 @@ int main()
 
         main_loop();
     }
-    else//or it will ask the password
+    else //or it will ask the password
     {
         //This only tkes the password and opens the file having the real passwords nd compres it.
 
         char password_existing[10], c1, c2;
-        
+
         printf("Enter the password- ");
         gets(password_existing);
 

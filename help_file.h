@@ -21,4 +21,5 @@ void help()
     printf(">>clr - This will clear the screen of the terminal\n\n");
     printf(">>read - This will print the content of the file.\n\n");
     printf(">>cnge - This will change your username and password\n\n");
+    printf(">>copy - This will copy the contents of one file to another file.\n\n");
 }

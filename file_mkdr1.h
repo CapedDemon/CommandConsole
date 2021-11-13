@@ -5,7 +5,7 @@
 #include <unistd.h>
 #define SIZE 25
 
-//function to make a file.
+//function to make a folder.
 void mkdr()
 {
     int check;

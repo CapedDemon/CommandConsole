@@ -15,7 +15,7 @@ void read_file(){
     if (fptr == NULL)
     {
         printf("Cannot open file \n");
-        exit(0);
+        
     }
 
     // Read contents from file
