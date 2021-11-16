@@ -3,6 +3,7 @@ Language: C
 */
 
 //header files(some are inbuilt and some header files I have created to organize different codes)
+#include "system_info.h"
 #include "copy_file.h"
 #include "change_root.h"
 #include "change_dir_path.h"
@@ -120,6 +121,9 @@ void main_loop()
         }
         else if(strcmp(cmd_str, "copy") == 0){
             copy(); //calling the copy  fucntion in the copy_file.h
+        }
+        else if(strcmp(cmd_str, "sys") == 0){
+            int a = info_system(); //calling the copy  fucntion in the system_info.h
         }
         else
         {

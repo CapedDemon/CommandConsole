@@ -28,6 +28,7 @@ The main program is written in the main.c file and the functions written there a
 - To print the content of the file: The code is written in open_file1.h
 - To change the username and password: The code is written in change_root.h
 - To copy the contents of one file to another file: The code is written in copy_file.h
+- To print the information of OS: The code is written in system_info.h
 
 ## Things to remember while executing the application:
 - Provide the correct command or else it will show "Error: Wrong Command. Run command which is there. Type help for information".
