@@ -3,6 +3,7 @@ Language: C
 */
 
 //header files(some are inbuilt and some header files I have created to organize different codes)
+#include "echo_file.h"
 #include "system_info.h"
 #include "copy_file.h"
 #include "change_root.h"
@@ -125,6 +126,9 @@ void main_loop()
         }
         else if(strcmp(cmd_str, "sys") == 0){
             int a = info_system(); //calling the copy  fucntion in the system_info.h
+        }
+        else if(strcmp(cmd_str, "echo") == 0){
+            echo(); //calling the echo function in the echo_file.h
         }
         else
         {
