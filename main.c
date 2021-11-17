@@ -25,8 +25,13 @@ Language: C
 #include <stdlib.h>
 #include <string.h>
 #include <time.h>
+#include <conio.h>
 
-//define the number of characters in a file
+//define variables
+#define ENTER 13
+#define space 32
+#define tab 9
+#define bksp 8
 #define SIZE 25
 
 void main_loop()
@@ -143,6 +148,7 @@ int main()
     printf("Welcome to C terminal.\n\nTime:%s\n(Type help for manual or you can directly start interacting with terminal)\n\n", ctime(&t));
 
     //setting of username and password
+    int i =0;
     char username[10], password[10];
     FILE *root_passwd;
     root_passwd = fopen("password_root.txt", "r");
@@ -166,8 +172,29 @@ int main()
         gets(username);
         getchar();
         printf("PASSWORD:- ");
-        gets(password);
+        while(1){
+            password[i] = getch();
+            if(password[i] == ENTER){
+                password[i] = '\0';
+                break;
+            }
+            else if(password[i] == bksp){
+                if (i > 0)
+                {
+                    i--;
+                    printf("\b \b");
+                }
+            }
+            else if(password[i] == tab || password[i] == space){
+                continue;
+            }
+            else if(password[i] != 13){
+                printf("*");
+                i++;
+            }
+        }
         getchar();
+        
         fprintf(w_user, username);
         fprintf(wpasswd, password);
         fclose(w_user);
@@ -178,11 +205,38 @@ int main()
     else //or it will ask the password
     {
         //This only tkes the password and opens the file having the real passwords nd compres it.
-
+        int j = 0;
         char password_existing[10], c1, c2;
 
         printf("Enter the password- ");
-        gets(password_existing);
+        while (1)
+        {
+            password_existing[j] = getch();
+            if (password_existing[j] == ENTER)
+            {
+                password_existing[j] = '\0';
+                break;
+            }
+            else if (password_existing[j] == bksp)
+            {
+                if (j > 0)
+                {
+                    j--;
+                    printf("\b \b");
+                }
+            }
+            else if (password_existing[j] == tab || password_existing[j] == space)
+            {
+                continue;
+            }
+            else if (password_existing[j] != 13)
+            {
+                printf("*");
+                j++;
+            }
+            
+        }
+        getchar();
 
         FILE *ptr;
         ptr = fopen("password_root.txt", "r");
