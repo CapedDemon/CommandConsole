@@ -64,6 +64,6 @@ git clone https://github.com/Shreejan-35/CommandConsole.git
 
 ![](https://github.com/Shreejan-35/CommandConsole/blob/main/images/Screenshot.JPG)
  
-## License is MIT.
+## License is Apache2.0.
  
 ## This is all the things about my program. If you like it, then please share with others. This is a project which the begineers as well as intermediate programmers can build. Support me by following my github account. Thank you.
