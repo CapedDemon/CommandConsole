@@ -29,7 +29,7 @@ The main program is written in the main.c file and the functions written there a
 - To change the username and password: The code is written in change_root.h
 - To copy the contents of one file to another file: The code is written in copy_file.h
 - To print the information of OS: The code is written in system_info.h
-- To print the thing you wanter: The code is written in echo_file.h
+- To print the thing you wanted: The code is written in echo_file.h
 
 ## Things to remember while executing the application:
 - Provide the correct command or else it will show "Error: Wrong Command. Run command which is there. Type help for information".
@@ -59,6 +59,7 @@ You can clone my repository by executing this:-
 ```
 git clone https://github.com/Shreejan-35/CommandConsole.git
 ```
+You can also download the zip file, and then run the CommandConsole.exe file.
   
 ## I have given one screenshot which you can refer to.
 
