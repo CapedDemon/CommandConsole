@@ -24,4 +24,5 @@ void help()
     printf(">>copy - This will copy the contents of one file to another file.\n\n");
     printf(">>sys - This will print the information of your OS.\n\n");
     printf(">>echo - This will print anything which you have given. After writing echo press enter then write whatever you want and press enter.\n\n");
+    printf(">>root - This will print the username and password\n\n");
 }
