@@ -3,6 +3,7 @@ Language: C
 */
 
 //header files(some are inbuilt and some header files I have created to organize different codes)
+#include "userinfo.h"
 #include "echo_file.h"
 #include "system_info.h"
 #include "copy_file.h"
@@ -129,6 +130,9 @@ void main_loop()
         }
         else if(strcmp(cmd_str, "echo") == 0){
             echo(); //calling the echo function in the echo_file.h
+        }
+        else if(strcmp(cmd_str, "root") == 0){
+            rootDisplay();
         }
         else
         {
