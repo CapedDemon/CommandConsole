@@ -31,6 +31,7 @@ The main program is written in the main.c file and the functions written there a
 - To print the information of OS: The code is written in system_info.h
 - To print the thing you wanted: The code is written in echo_file.h
 - To print username & password: The code is written in userinfo.h
+- To rename the file: The code is written in rename_file.h
 
 ## Things to remember while executing the application:
 - Provide the correct command or else it will show "Error: Wrong Command. Run command which is there. Type help for information".
