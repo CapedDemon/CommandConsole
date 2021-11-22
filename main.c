@@ -3,6 +3,7 @@ Language: C
 */
 
 //header files(some are inbuilt and some header files I have created to organize different codes)
+#include "rename_file.h"
 #include "userinfo.h"
 #include "echo_file.h"
 #include "system_info.h"
@@ -133,6 +134,9 @@ void main_loop()
         }
         else if(strcmp(cmd_str, "root") == 0){
             rootDisplay();
+        }
+        else if(strcmp(cmd_str, "rname") == 0){
+            renameFile(); //calling the renameFile function in the rename_file.h
         }
         else
         {
