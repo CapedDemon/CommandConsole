@@ -49,6 +49,7 @@ If you have docker installed then it is very good. The steps to execute the soft
 ```
 docker run -it shreejan35/commandconsole:version (The latest version is available in the releases).
 ```
+**Recommended 2.6 and above**
 - It will pull the image from the docker hub.
 - When all the things are done it will start the program. 
 - It will be like a normal terminal. First of all type 'list' then check that all the files which are there in the github are shown there. 
