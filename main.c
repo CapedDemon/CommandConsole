@@ -3,27 +3,27 @@ Language: C
 */
 
 //header files(some are inbuilt and some header files I have created to organize different codes)
-#include "rename_file.h"
-#include "userinfo.h"
-#include "echo_file.h"
-#include "system_info.h"
-#include "copy_file.h"
-#include "change_root.h"
-#include "change_dir_path.h"
-#include "help_file.h"
-#include "open_file1.h"
-#include "file_mkdr1.h"
-#include "rmdr_file.h"
-#include "make_file.h"
-#include "wrta_file.h"
-#include "wrte_file.h"
-#include "list_file.h"
-#include "calc_file.h"
-#include "pcwd_file.h"
-#include "clr_file.h"
-#include "ccwd_file.h"
-#include "remo_file.h"
-#include "date_file.h"
+#include "rename_file.c"
+#include "userinfo.c"
+#include "echo_file.c"
+#include "system_info.c"
+#include "copy_file.c"
+#include "change_root.c"
+#include "change_dir_path.c"
+#include "help_file.c"
+#include "open_file1.c"
+#include "file_mkdr1.c"
+#include "rmdr_file.c"
+#include "make_file.c"
+#include "wrta_file.c"
+#include "wrte_file.c"
+#include "list_file.c"
+#include "calc_file.c"
+#include "pcwd_file.c"
+#include "clr_file.c"
+#include "ccwd_file.c"
+#include "remo_file.c"
+#include "date_file.c"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -36,7 +36,7 @@ Language: C
 void main_loop()
 {
     //all the commands length are 5 characters so the command input will be taken from this variable.
-    char cmd_str[5];
+    char cmd_str[4];
 
     int stop = 0; //intializing stop = 0 so as to stop the while loop when it is 1.
 
@@ -46,7 +46,7 @@ void main_loop()
         buf = (char *)malloc(100 * sizeof(char)); //I am using malloc as I don't know how much characters are there in the directory name.
         getcwd(buf, 100);                         //getcwd function is used here
         printf("[%s] $: ", buf);
-
+        free(buf);
         //taking the command
         scanf("%s", cmd_str);
 
@@ -156,7 +156,7 @@ int main()
     printf("Welcome to C terminal.\n\nTime:%s\n(Type help for manual or you can directly start interacting with terminal)\n\n", ctime(&t));
 
     //setting of username and password
-    char username[10], password[10];
+    char username[10], password[10], ch;
     FILE *root_passwd;
     root_passwd = fopen("password_root.txt", "r");
 
@@ -176,11 +176,12 @@ int main()
         printf("Give two enters after wrting the username and password.. Length of username should not exceed 10 charcters and password\nshould be of 6 characters.\n");
 
         printf("USERNAME:- ");
-        gets(username);
-        getchar();
+        fgets(username, 10, stdin);
+        username[strlen(username) -1] = 0;
+
         printf("PASSWORD:- ");
-        gets(password);
-        getchar();
+        fgets(password, 10, stdin);
+        password[strlen(password) - 1] = 0;
         
         fprintf(w_user, username);
         fprintf(wpasswd, password);
@@ -195,8 +196,8 @@ int main()
         char password_existing[10], c1, c2;
 
         printf("Enter the password- ");
-        gets(password_existing);
-        getchar();
+        fgets(password_existing, 10, stdin);
+        password_existing[strlen(password_existing) - 1] = 0;
 
         FILE *ptr;
         ptr = fopen("password_root.txt", "r");
