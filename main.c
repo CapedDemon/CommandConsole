@@ -3,27 +3,7 @@ Language: C
 */
 
 //header files(some are inbuilt and some header files I have created to organize different codes)
-#include "rename_file.c"
-#include "userinfo.c"
-#include "echo_file.c"
-#include "system_info.c"
-#include "copy_file.c"
-#include "change_root.c"
-#include "change_dir_path.c"
-#include "help_file.c"
-#include "open_file1.c"
-#include "file_mkdr1.c"
-#include "rmdr_file.c"
-#include "make_file.c"
-#include "wrta_file.c"
-#include "wrte_file.c"
-#include "list_file.c"
-#include "calc_file.c"
-#include "pcwd_file.c"
-#include "clr_file.c"
-#include "ccwd_file.c"
-#include "remo_file.c"
-#include "date_file.c"
+#include "MainCommands.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>

@@ -11,27 +11,29 @@ The main program is written in the main.c file and the functions written there a
 
 <br/>
 
-### The list of files are:
-- Calculator: The code is written in calc_file.h
-- Change Current Working Directory: The code is written in ccwd_file.h
-- Clear the Screen: The code is written in clr_file.h
-- Show the date: The code is written in date_file.h
-- Make new directory: The code is written in file_mkdr1.h
-- Help(which show all the function to be run): The code is written in help_file.h
-- List all the files and directories: The code is written in list_file.h
-- Create a new file: The code is written in make_file.h
-- Print the current working directory: The code is written in pcwd_file.h
-- Remove the file: The code is written in remo_file.h
-- Remove the directory file: The code is written in rmdr_file.h
-- To append something in a file: The code is written in wrta_file.h
-- To write something in a file: The code is written in wrte_file.h
-- To print the content of the file: The code is written in open_file1.h
-- To change the username and password: The code is written in change_root.h
-- To copy the contents of one file to another file: The code is written in copy_file.h
-- To print the information of OS: The code is written in system_info.h
-- To print the thing you wanted: The code is written in echo_file.h
-- To print username & password: The code is written in userinfo.h
-- To rename the file: The code is written in rename_file.h
+### The list of functions are:
+- Calculator: calc
+- Change Current Working Directory: ccwd
+- Clear the Screen: clr
+- Show the date: date
+- Make new directory: mkdr
+- Help(which show all the function to be run): help
+- List all the files and directories: list
+- Create new file: make
+- Print the current working directory: pcwd
+- Remove the file: remo
+- Remove the directory file: rmdr
+- Append something in a file: wrta
+- Write something in a file: wrte
+- Print the content of the file: read
+- Change the username and password: cnge
+- Copy the contents of one file to another file: copy
+- Print the information of OS: sys
+- Print the thing you wanted: echo
+- Print username & password: root
+- Rename the file: rname
+
+All the functions are written in **MainCommands.h**
 
 ## Things to remember while executing the application:
 - Provide the correct command or else it will show "Error: Wrong Command. Run command which is there. Type help for information".
@@ -41,6 +43,11 @@ The main program is written in the main.c file and the functions written there a
 ## Limitations and things to be done more and help required:
 - I don't know whether it can run in other softwares(like- linux, etc) as I have done this code in windows laptop. I want you all to test this.
 - Anyother modification will be considered.
+
+Makefile is also included. The command of make file is:-
+```
+mingw32-make
+```
 
 # <b>Getting Started<b/>
 
