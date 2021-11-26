@@ -4,7 +4,7 @@
 #include <dirent.h>
 #include <unistd.h>
 #include <time.h>
-#define SIZE 25
+#define SIZE 260
 
 char change_dir[100];
 
@@ -130,7 +130,7 @@ void clearScreen()
 }
 
 // Fucntion to copy file
-void copy()
+void copy_file()
 {
     FILE *ptr1;
     FILE *ptr2;
@@ -227,11 +227,13 @@ void help()
     printf(">>clr - This will clear the screen of the terminal\n\n");
     printf(">>read - This will print the content of the file.\n\n");
     printf(">>cnge - This will change your username and password\n\n");
-    printf(">>copy - This will copy the contents of one file to another file.\n\n");
+    printf(">>cfile - This will copy the contents of one file to another file.\n\n");
     printf(">>sys - This will print the information of your OS.\n\n");
     printf(">>echo - This will print anything which you have given. After writing echo press enter then write whatever you want and press enter.\n\n");
     printf(">>root - This will print the username and password\n\n");
-    printf(">>rname - This will rename the file name you want.\n\n");
+    printf(">>rfile - This will rename the file with the name you want.\n\n");
+    printf(">>rdr - This will rename the folder with the name you want.\n\n");
+    printf(">>getf - This will confirm you that the fille or folder name you have given is present in the directory that you specified.\n\n");
 }
 
 //function to list all the files in the current directory.
@@ -489,4 +491,52 @@ void pcwd()
     {
         printf("%s\n", current_working_dir);
     }
+}
+
+// Function to rename folder
+void renameFolder(){
+    getchar();
+    char firstname[SIZE], lastname[SIZE];
+    printf("Enter the current name of the folder: ");
+    fgets(firstname, SIZE, stdin);
+    firstname[strlen(firstname) - 1] = 0;
+    printf("Enter the new name of the folder: ");
+    fgets(lastname, SIZE, stdin);
+    lastname[strlen(lastname) - 1] = 0;
+
+    int value = rename(firstname, lastname);
+    if(!value){
+        printf("Successfully changed\n");
+    }
+    else{
+        printf("Cannot change\n");
+    }
+}
+
+// Function to find a file or folder in a folder
+void getf(){
+    getchar();
+    char foldername[SIZE];
+    printf("Enter the name of the folder or directory first: ");
+    fgets(foldername, SIZE, stdin);
+    foldername[strlen(foldername) - 1] = 0;
+    DIR *dp;
+    struct dirent *dirp;
+
+    if ((dp = opendir(foldername)) == NULL)
+    {
+        printf("can't find %s\n", foldername);
+    }
+    else{
+        printf("Enter the filename or foldername to find: ");
+        char reciepent[SIZE];
+        fgets(reciepent, SIZE, stdin);
+        reciepent[strlen(reciepent) - 1] = 0;
+        while ((dirp = readdir(dp)) != NULL)
+        {
+            if (!strcmp(dirp->d_name, reciepent))
+                printf("%s is presnt in the folder %s\n", dirp->d_name, foldername);
+        }
+    }
+    closedir(dp);
 }

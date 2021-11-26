@@ -9,9 +9,8 @@ Language: C
 #include <string.h>
 #include <time.h>
 
-
 //define variables
-#define SIZE 25
+#define SIZE 260
 
 void main_loop()
 {
@@ -37,86 +36,98 @@ void main_loop()
 
         else if (strcmp(cmd_str, "cnge") == 0)
         {
-            change(); //calling the change function in the change_root.h
+            change();
         }
 
         else if (strcmp(cmd_str, "help") == 0)
         {
-            help(); //calling the help function in the help_file.h
+            help();
         }
         else if (strcmp(cmd_str, "list") == 0)
         {
-            list(); //calling the list function in the list_file.h
+            list();
         }
         else if (strcmp(cmd_str, "date") == 0)
         {
-            date(); //calling the date function in the date_file.h
+            date();
         }
         else if (strcmp(cmd_str, "calc") == 0)
         {
-            calc(); //calling the calc function in the calc_file.h
+            calc();
         }
         else if (strcmp(cmd_str, "pcwd") == 0)
         {
-            pcwd(); //calling the pcwd function in the pcwd_file.h
+            pcwd();
         }
         else if (strcmp(cmd_str, "make") == 0)
         {
-            make(); //calling the make function in the make_file.h
+            make();
         }
         else if (strcmp(cmd_str, "wrte") == 0)
         {
-            wrte(); //calling the wrte function in the wrte_file.h
+            wrte();
         }
         else if (strcmp(cmd_str, "wrta") == 0)
         {
-            wrta(); //calling the wrta function in the wrta_file.h
+            wrta();
         }
         else if (strcmp(cmd_str, "remo") == 0)
         {
-            remo(); //calling the remo function in the remo_file.h
+            remo();
         }
         else if (strcmp(cmd_str, "ccwd") == 0)
         {
-            ccwd(); //calling the ccwd function in the ccwd_file.h
+            ccwd();
         }
         else if (strcmp(cmd_str, "mkdr") == 0)
         {
-            mkdr(); //calling the mkdr function in the file_mkdr1.h
+            mkdr();
         }
         else if (strcmp(cmd_str, "rmdr") == 0)
         {
-            rmdr(); //calling the rmdr function in the rmdr_file.h
+            rmdr();
         }
         else if (strcmp(cmd_str, "info") == 0)
         {
-            //You can give your name here. And email address.
             printf("Developer: Shreejan Dolai\nLanguage: C\nEmail Id: dolaishreejan@gmail.com\n(c)All rights reserved.\n\n");
 
             printf("\n\n\n\n\n\n");
         }
         else if (strcmp(cmd_str, "clr") == 0)
         {
-            clearScreen(); //calling the clearScreen function in the clr_file.h
+            clearScreen();
         }
         else if (strcmp(cmd_str, "read") == 0)
         {
-            read_file(); //calling the open function in the open_file.h
+            read_file();
         }
-        else if(strcmp(cmd_str, "copy") == 0){
-            copy(); //calling the copy  fucntion in the copy_file.h
+        else if (strcmp(cmd_str, "cfile") == 0)
+        {
+            copy_file();
         }
-        else if(strcmp(cmd_str, "sys") == 0){
-            int a = info_system(); //calling the copy  fucntion in the system_info.h
+        else if (strcmp(cmd_str, "sys") == 0)
+        {
+            int a = info_system();
         }
-        else if(strcmp(cmd_str, "echo") == 0){
-            echo(); //calling the echo function in the echo_file.h
+        else if (strcmp(cmd_str, "echo") == 0)
+        {
+            echo();
         }
-        else if(strcmp(cmd_str, "root") == 0){
+        else if (strcmp(cmd_str, "root") == 0)
+        {
             rootDisplay();
         }
-        else if(strcmp(cmd_str, "rname") == 0){
-            renameFile(); //calling the renameFile function in the rename_file.h
+        else if (strcmp(cmd_str, "rfile") == 0)
+        {
+            renameFile();
+        }
+        else if (strcmp(cmd_str, "rdr") == 0)
+        {
+            renameFolder();
+        }
+        else if (strcmp(cmd_str, "getf") == 0)
+        {
+            getf();
         }
         else
         {
@@ -157,12 +168,12 @@ int main()
 
         printf("USERNAME:- ");
         fgets(username, 10, stdin);
-        username[strlen(username) -1] = 0;
+        username[strlen(username) - 1] = 0;
 
         printf("PASSWORD:- ");
         fgets(password, 10, stdin);
         password[strlen(password) - 1] = 0;
-        
+
         fprintf(w_user, username);
         fprintf(wpasswd, password);
         fclose(w_user);
