@@ -28,11 +28,13 @@ The main program is written in the main.c file and the functions written there a
 - Write something in a file: wrte
 - Print the content of the file: read
 - Change the username and password: cnge
-- Copy the contents of one file to another file: copy
+- Copy the contents of one file to another file: cfile
 - Print the information of OS: sys
 - Print the thing you wanted: echo
 - Print username & password: root
-- Rename the file: rname
+- Rename the file: rfile
+- Rename the folder: rdr
+- To confirm that a file or folder is present in a directory specified by you: getf
 
 All the functions are written in **MainCommands.h**
 
