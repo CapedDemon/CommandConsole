@@ -35,6 +35,7 @@ The main program is written in the main.c file and the functions written there a
 - Rename the file: rfile
 - Rename the folder: rdr
 - To confirm that a file or folder is present in a directory specified by you: getf
+- To get the number of line of a file in which a specified word is present: findf
 
 All the functions are written in **MainCommands.h**
 
