@@ -4,7 +4,14 @@
 #include <dirent.h>
 #include <unistd.h>
 #include <time.h>
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <fcntl.h>
+
+#define Max 8192
+#define COPYMODE 0644
 #define SIZE 260
+#define BUFFER_SIZE 4096
 
 char change_dir[100];
 
@@ -234,6 +241,7 @@ void help()
     printf(">>rfile - This will rename the file with the name you want.\n\n");
     printf(">>rdr - This will rename the folder with the name you want.\n\n");
     printf(">>getf - This will confirm you that the fille or folder name you have given is present in the directory that you specified.\n\n");
+    printf(">>findf - This will find the specified word in a given file and print the line where it is located.\n\n");
 }
 
 //function to list all the files in the current directory.
@@ -494,7 +502,8 @@ void pcwd()
 }
 
 // Function to rename folder
-void renameFolder(){
+void renameFolder()
+{
     getchar();
     char firstname[SIZE], lastname[SIZE];
     printf("Enter the current name of the folder: ");
@@ -505,16 +514,19 @@ void renameFolder(){
     lastname[strlen(lastname) - 1] = 0;
 
     int value = rename(firstname, lastname);
-    if(!value){
+    if (!value)
+    {
         printf("Successfully changed\n");
     }
-    else{
+    else
+    {
         printf("Cannot change\n");
     }
 }
 
 // Function to find a file or folder in a folder
-void getf(){
+void getf()
+{
     getchar();
     char foldername[SIZE];
     printf("Enter the name of the folder or directory first: ");
@@ -527,7 +539,8 @@ void getf(){
     {
         printf("can't find %s\n", foldername);
     }
-    else{
+    else
+    {
         printf("Enter the filename or foldername to find: ");
         char reciepent[SIZE];
         fgets(reciepent, SIZE, stdin);
@@ -539,4 +552,56 @@ void getf(){
         }
     }
     closedir(dp);
+}
+
+// Function to find the location of a word in a file
+void findf()
+{
+    getchar();
+    char word[SIZE];
+    FILE *fptr;
+
+    int i = 0, line = 1;
+    int confirm;
+    int linearray[1000];
+
+    char filename[SIZE];
+    printf("Enter filename: ");
+    fgets(filename, SIZE, stdin);
+    filename[strlen(filename) - 1] = 0;
+
+    char str[BUFFER_SIZE];
+
+    fptr = fopen(filename, "r");
+    if (fptr == NULL)
+    {
+        printf("Cannot open file.\n");
+    }
+    else
+    {
+        printf("Enter the word to find: ");
+        fgets(word, SIZE, stdin);
+        word[strlen(word) - 1] = 0;
+        printf("The word is find in line number:- \n");
+        while (fgets(str, BUFFER_SIZE, fptr) != NULL)
+        {
+            if (strstr(str, word))
+            {
+                linearray[i] = line;
+                confirm = 1;
+                printf("%d\n", linearray[i]);
+            }
+            else
+            {
+                confirm = 0;
+            }
+            i++;
+            line++;
+        }
+        if (confirm == 0)
+        {
+            printf("Actually! eh word is not present.\n");
+        }
+    }
+    fclose(fptr);
 }
