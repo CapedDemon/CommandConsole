@@ -4,12 +4,7 @@
 #include <dirent.h>
 #include <unistd.h>
 #include <time.h>
-#include <sys/types.h>
-#include <sys/stat.h>
-#include <fcntl.h>
 
-#define Max 8192
-#define COPYMODE 0644
 #define SIZE 260
 #define BUFFER_SIZE 4096
 
