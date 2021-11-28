@@ -129,6 +129,9 @@ void main_loop()
         {
             getf();
         }
+        else if(strcmp(cmd_str, "findf") == 0){
+            findf();
+        }
         else
         {
             printf("Error: Wrong Command\n\tRun command which is there. Type help for information\n");
