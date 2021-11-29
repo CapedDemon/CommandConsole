@@ -4,7 +4,7 @@
 # **CommandConsole**
 As the name suggests this is a terminal like software. Like a normal terminal in linux or command prompt in windows, it also works like the same. It is made using C language and my motive of building this software is to refresh my C language skills and to make something which can take command and work.
 
-![](https://github.com/Shreejan-35/CommandConsole/blob/main/images/terminal_image_social.png)
+![](https://github.com/Shreejan-35/CommandWeb/blob/master/static/CommandLogo.png)
 
 # <b>Documentation</b>
 <br/>
