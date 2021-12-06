@@ -1,7 +1,6 @@
 /*Author: Shreejan Dolai
 Language: C
 */
-
 //header files(some are inbuilt and some header files I have created to organize different codes)
 #include "MainCommands.h"
 #include <stdio.h>
@@ -18,123 +17,184 @@ void main_loop()
     char cmd_str[4];
 
     int stop = 0; //intializing stop = 0 so as to stop the while loop when it is 1.
-
+    clearScreen();
+    printf("\nWELCOME ");
+    FILE *user;
+    user = fopen("root_username.txt", "r");
+    char c1;
+    c1 = fgetc(user);
+    while(c1 != EOF){
+        printf("%c", c1);
+        c1 = fgetc(user);
+    }
+    printf("\n");
     while (stop != 1) //the condition to stop the while loop.
     {
+        printf("\033[0;36m");
         char *buf;                                //intializing a string to print the current or working directory.
         buf = (char *)malloc(100 * sizeof(char)); //I am using malloc as I don't know how much characters are there in the directory name.
         getcwd(buf, 100);                         //getcwd function is used here
-        printf("[%s] $: ", buf);
+        printf("(:-)\n[%s] $: ", buf);
         free(buf);
         //taking the command
+        printf("\033[0m");
         scanf("%s", cmd_str);
 
         if (strcmp(cmd_str, "quit") == 0)
         {
+            printf("\033[0m");
+            printf("\nBYE BYE\n");
             stop = 1; //making stop = 1 to stop the while loop. And the terminal shut downs.
         }
 
         else if (strcmp(cmd_str, "cnge") == 0)
         {
             change();
+            printf("\033[0;36m");
         }
 
         else if (strcmp(cmd_str, "help") == 0)
         {
             help();
+            printf("\033[0;36m");
         }
         else if (strcmp(cmd_str, "list") == 0)
         {
             list();
+            printf("\033[0;36m");
+            
         }
         else if (strcmp(cmd_str, "date") == 0)
         {
             date();
+            printf("\033[0;36m");
+            
         }
         else if (strcmp(cmd_str, "calc") == 0)
         {
             calc();
+            printf("\033[0;36m");
+            
         }
         else if (strcmp(cmd_str, "pcwd") == 0)
         {
             pcwd();
+            printf("\033[0;36m");
+            
         }
         else if (strcmp(cmd_str, "make") == 0)
         {
             make();
+            printf("\033[0;36m");
+            
         }
         else if (strcmp(cmd_str, "wrte") == 0)
         {
             wrte();
+            printf("\033[0;36m");
+            
         }
         else if (strcmp(cmd_str, "wrta") == 0)
         {
             wrta();
+            printf("\033[0;36m");
+            
         }
         else if (strcmp(cmd_str, "remo") == 0)
         {
             remo();
+            printf("\033[0;36m");
+            
         }
         else if (strcmp(cmd_str, "ccwd") == 0)
         {
             ccwd();
+            printf("\033[0;36m");
+            
         }
         else if (strcmp(cmd_str, "mkdr") == 0)
         {
             mkdr();
+            printf("\033[0;36m");
+            
         }
         else if (strcmp(cmd_str, "rmdr") == 0)
         {
             rmdr();
+            printf("\033[0;36m");
+            
         }
         else if (strcmp(cmd_str, "info") == 0)
         {
-            printf("Developer: Shreejan Dolai\nLanguage: C\nEmail Id: dolaishreejan@gmail.com\n(c)All rights reserved.\n\n");
+            printf("Command Console is a fast, light-weight and secure shell.\nIt can run cross-platform - wndows, macOS and linux.\nType help to know about the commands.\nFor any query write us email - dolaishreejan@gmail.com\n");
 
             printf("\n\n\n\n\n\n");
         }
         else if (strcmp(cmd_str, "clr") == 0)
         {
             clearScreen();
+            printf("\033[0;36m");
+
         }
         else if (strcmp(cmd_str, "read") == 0)
         {
             read_file();
+            printf("\033[0;36m");
+
         }
         else if (strcmp(cmd_str, "cfile") == 0)
         {
             copy_file();
+            printf("\033[0;36m");
+
         }
         else if (strcmp(cmd_str, "sys") == 0)
         {
             int a = info_system();
+            printf("\033[0;36m");
+
         }
         else if (strcmp(cmd_str, "echo") == 0)
         {
             echo();
+            printf("\033[0;36m");
+
         }
         else if (strcmp(cmd_str, "root") == 0)
         {
             rootDisplay();
+            printf("\033[0;36m");
+
         }
         else if (strcmp(cmd_str, "rfile") == 0)
         {
             renameFile();
+            printf("\033[0;36m");
+
         }
         else if (strcmp(cmd_str, "rdr") == 0)
         {
             renameFolder();
+            printf("\033[0;36m");
+
         }
         else if (strcmp(cmd_str, "getf") == 0)
         {
             getf();
+            printf("\033[0;36m");
+
         }
         else if(strcmp(cmd_str, "findf") == 0){
             findf();
+            printf("\033[0;36m");
+
         }
         else
         {
+            printf("\033[0;31m");
+
             printf("Error: Wrong Command\n\tRun command which is there. Type help for information\n");
+            printf("\033[0;36m");
         }
     }
 }
@@ -147,7 +207,7 @@ int main()
     time(&t);
 
     //welcome statement with time
-    printf("Welcome to C terminal.\n\nTime:%s\n(Type help for manual or you can directly start interacting with terminal)\n\n", ctime(&t));
+    printf("Welcome to Command Console.\n\nTime:%s\n(Type help for manual or you can directly start interacting with terminal)\n\n", ctime(&t));
 
     //setting of username and password
     char username[10], password[10], ch;
@@ -167,7 +227,12 @@ int main()
         wpasswd = fopen("password_root.txt", "w");
 
         //the length of the username should be less than 10 charcters and password less than 6 characters
-        printf("Give two enters after wrting the username and password.. Length of username should not exceed 10 charcters and password\nshould be of 6 characters.\n");
+        printf("Give two enters after wrting the username and password.. Length of username should not exceed 10 charcters and password\nshould be of 6 characters.\n\n");
+        printf("YOU WILL BE ABLE TO TYPE YOUR PASSWORD AND USERNAME ONCE ONLY.\n\n");
+        printf("Things to remeber:-\n");
+        printf("i. Be accurate and do not make mistake\n");
+        printf("ii. Do not share your passwords with others\n");
+        printf("iii. With great power comes great responsibility\n\nGood Luck!!!");
 
         printf("USERNAME:- ");
         fgets(username, 10, stdin);

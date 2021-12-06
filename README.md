@@ -4,9 +4,11 @@
 # **CommandConsole**
 As the name suggests this is a terminal like software. Like a normal terminal in linux or command prompt in windows, it also works like the same. It is made using C language and my motive of building this software is to refresh my C language skills and to make something which can take command and work.
 
-![](https://github.com/Shreejan-35/CommandConsole/blob/main/images/terminal_image_social.png)
+![](https://github.com/Shreejan-35/CommandConsole/blob/main/images/CommandLogo.png)
 
 # <b>Documentation</b>
+![](https://github.com/Shreejan-35/CommandConsole/blob/main/images/Overview.jpg)
+
 <br/>
 The main program is written in the main.c file and the functions written there are in there individual files and I have made them header files and included them where it is necessary. All the code is written in C language. I have included a .exe file of the main.c file. I have run it in my system and it worked fine doing all the things.
 
@@ -44,9 +46,6 @@ All the functions are written in **MainCommands.h**
 - Type quit to stop the terminal.
 - When changing the directory provide the exact name of the directory.
 ## <br/>
-## Limitations and things to be done more and help required:
-- I don't know whether it can run in other softwares(like- linux, etc) as I have done this code in windows laptop. I want you all to test this.
-- Anyother modification will be considered.
 
 Makefile is also included. The command of make file is:-
 ```
@@ -54,13 +53,15 @@ mingw32-make
 ```
 
 # <b>Getting Started<b/>
+![](https://github.com/Shreejan-35/CommandConsole/blob/main/images/Download.jpg)
+
 
 If you have docker installed then it is very good. The steps to execute the software using docker are as follows:-
 - type :- 
 ```
 docker run -it shreejan35/commandconsole:version (The latest version is available in the releases).
 ```
-**Recommended 2.6 and above**
+**Recommended 2.7 and above**
 - It will pull the image from the docker hub.
 - When all the things are done it will start the program. 
 - It will be like a normal terminal. First of all type 'list' then check that all the files which are there in the github are shown there. 

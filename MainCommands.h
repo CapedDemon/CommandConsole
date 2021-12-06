@@ -13,6 +13,7 @@ char change_dir[100];
 // Function to chnage the cuurent directory
 void ccwd()
 {
+    printf("\033[0;35m");
     printf("Enter the path to change this directory to: \n");
     getchar();
     fgets(change_dir, 100, stdin);
@@ -30,6 +31,7 @@ void ccwd()
 // Function to calculate
 void calc()
 {
+    printf("\033[0;34m");
     char type;
     printf("Enter d for decimal operations and i for integer operation: ");
     scanf("%c", &type);
@@ -96,6 +98,12 @@ void calc()
 //Function to change root credentials - username and password
 void change()
 {
+    printf("\033[0;32m");
+    printf("YOU WILL BE ABLE TO TYPE YOUR PASSWORD AND USERNAME ONCE ONLY.\n\n");
+    printf("Things to remeber:-\n");
+    printf("i. Be accurate and do not make mistake\n");
+    printf("ii. Do not share your passwords with others\n");
+    printf("iii. With great power comes great responsibility\n\nGood Luck!!!");
     char username_new[10], password_new[10];
     int i = 0;
     getchar();
@@ -134,6 +142,7 @@ void clearScreen()
 // Fucntion to copy file
 void copy_file()
 {
+    printf("\033[0;33m");
     FILE *ptr1;
     FILE *ptr2;
     char filename1[SIZE], filename2[SIZE], content;
@@ -175,6 +184,7 @@ void copy_file()
 //date function. If the user clears the screen it can be usefule to see the date.
 void date()
 {
+    printf("\033[0;37m");
     time_t t;
     time(&t);
     printf("%s\n\n", ctime(&t));
@@ -183,15 +193,18 @@ void date()
 //Function to print the anything which user has given.
 void echo()
 {
+    printf("\033[0;34m");
     fgetc(stdin);
     char user_str[1000000];
     fgets(user_str, 1000000, stdin);
+    printf("\033[0;31m");
     printf("%s", user_str);
 }
 
 //function to make a folder.
 void mkdr()
 {
+    printf("\033[0;35m");
     int check;
     char dirname[SIZE];
     printf("Enter a name of the folder:");
@@ -211,6 +224,7 @@ void mkdr()
 //function to print the help menu.
 void help()
 {
+    printf("\033[0;32m");
     printf("\tIn all the cases first write the command hit enter and then give the arguements\n\n");
 
     printf(">>calc - This command open a terminal calculator and you can do simple calculator operation in this.\n\tThe operaation are - (+, -, * , /, ^(Power of. Ex- 3^2 = 9)\n\tFirst number (operation) Second Number\n\tFor doing operation in decimal give d and for integer give i\n\n\n");
@@ -242,6 +256,8 @@ void help()
 //function to list all the files in the current directory.
 void list()
 {
+
+    printf("\033[0;32m");
     DIR *dir = opendir(".");
     if (dir == NULL)
     {
@@ -262,6 +278,8 @@ void list()
 // Function to make a file
 void make()
 {
+    printf("\033[0;33m");
+
     FILE *fp;
     char name_file[SIZE];
     getchar();
@@ -276,6 +294,8 @@ void make()
 // Function to read the contents of a file
 void read_file()
 {
+    printf("\033[0;37m");
+
     getchar();
     FILE *fptr;
 
@@ -309,6 +329,8 @@ void read_file()
 //function to remove a file
 void remo()
 {
+    printf("\033[0;33m");
+
     char name_file[SIZE];
     getchar();
     printf("Enter the file name to delete: ");
@@ -329,6 +351,8 @@ void remo()
 // Function to rename file
 void renameFile()
 {
+    printf("\033[0;32m");
+
     getchar();
     char old_file[SIZE];
     char new_file_name[SIZE];
@@ -354,6 +378,8 @@ void renameFile()
 //function to remove a directory.
 void rmdr()
 {
+    printf("\033[0;31m");
+
     int check;
     char dirname[SIZE];
 
@@ -375,6 +401,8 @@ void rmdr()
 // Function to print system information
 int info_system()
 {
+    printf("\033[0;32m");
+
 #ifdef __linux__
     int r = system("cat /etc/os-release");
     return 1;
@@ -394,6 +422,8 @@ int info_system()
 // Function to print the username and password
 void rootDisplay()
 {
+    printf("\033[0;32m");
+
     FILE *ptr1;
     FILE *ptr2;
     char c1, c2;
@@ -420,6 +450,8 @@ void rootDisplay()
 //a function with which user can append into a file using the terminal.
 void wrta()
 {
+    printf("\033[0;35m");
+
     FILE *fp;
     FILE *fptr;
     char name_file[SIZE];
@@ -449,6 +481,8 @@ void wrta()
 //a function with which user can write into a file using terminal.
 void wrte()
 {
+    printf("\033[0;35m");
+
     FILE *fp;
     FILE *fptr;
     char name_file[SIZE];
@@ -477,6 +511,8 @@ void wrte()
 // Function to print current directory
 void pcwd()
 {
+    printf("\033[0;33m");
+
 #ifdef WINDOWS
 #include <direct.h>
 #define GetCurrentDir _getcwd
@@ -499,6 +535,8 @@ void pcwd()
 // Function to rename folder
 void renameFolder()
 {
+    printf("\033[0;32m");
+
     getchar();
     char firstname[SIZE], lastname[SIZE];
     printf("Enter the current name of the folder: ");
@@ -522,6 +560,8 @@ void renameFolder()
 // Function to find a file or folder in a folder
 void getf()
 {
+    printf("\033[0;34m");
+
     getchar();
     char foldername[SIZE];
     printf("Enter the name of the folder or directory first: ");
@@ -552,6 +592,8 @@ void getf()
 // Function to find the location of a word in a file
 void findf()
 {
+    printf("\033[0;32m");
+
     getchar();
     char word[SIZE];
     FILE *fptr;
@@ -588,7 +630,9 @@ void findf()
             }
             else
             {
-                confirm = 0;
+                if(confirm != 1){
+                    confirm = 0;
+                }
             }
             i++;
             line++;
