@@ -256,7 +256,6 @@ void help()
 //function to list all the files in the current directory.
 void list()
 {
-
     printf("\033[0;32m");
     DIR *dir = opendir(".");
     if (dir == NULL)
@@ -630,7 +629,8 @@ void findf()
             }
             else
             {
-                if(confirm != 1){
+                if (confirm != 1)
+                {
                     confirm = 0;
                 }
             }
