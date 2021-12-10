@@ -251,6 +251,7 @@ void help()
     printf(">>rdr - This will rename the folder with the name you want.\n\n");
     printf(">>getf - This will confirm you that the fille or folder name you have given is present in the directory that you specified.\n\n");
     printf(">>findf - This will find the specified word in a given file and print the line where it is located.\n\n");
+    printf(">>hist - This will print all the commands which you have written\n\n");
 }
 
 //function to list all the files in the current directory.

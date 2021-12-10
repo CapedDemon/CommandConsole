@@ -37,6 +37,9 @@ The main program is written in the main.c file and the functions written there a
 - Rename the folder: rdr
 - To confirm that a file or folder is present in a directory specified by you: getf
 - To get the number of line of a file in which a specified word is present: findf
+- To get the list of past commands: hist
+
+**We have used the concept of *Linked List* and *Queue* in the code.**
 
 All the functions are written in **MainCommands.h**
 
