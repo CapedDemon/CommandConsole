@@ -11,8 +11,67 @@ Language: C
 //define variables
 #define SIZE 260
 
+struct Node{
+    char *data;
+    struct Node *next;
+};
+struct Queue{
+    int top;
+    struct Node* rearNode;
+    struct Node *frontNode;
+};
+
+void insertion(struct Queue *q, char data[]){
+    if(q->top == 0){
+        q->frontNode = (struct Node *)malloc(sizeof(struct Node));
+        q->frontNode->data = data;
+        q->frontNode->next = NULL;
+        q->rearNode = q->frontNode;
+        q->top = 1;
+    }
+    else{
+        if(q->top == 1){
+            q->rearNode = (struct Node *)malloc(sizeof(struct Node));
+            q->rearNode->data = data;
+            q->rearNode->next = NULL;
+            q->frontNode->next = q->rearNode;
+            q->top++;
+        }
+        else{
+            struct Node *n = (struct Node *)malloc(sizeof(struct Node));
+            q->rearNode->next = n;
+            n->next = NULL;
+            q->rearNode = n;
+            q->rearNode->data= data;
+            q->top++;
+        }
+        
+    }
+}
+
+void traverse(struct Queue *a){
+    struct Node *nomad = a->frontNode;
+    if(a->top == 0){
+        printf("No commands typed yet\n");
+    }
+    else{
+        while (nomad!=NULL)
+        {
+            printf("%s\n", nomad->data);
+            nomad = nomad->next;
+        }
+        
+        
+    }
+}
+
 void main_loop()
 {
+    struct Queue *q = (struct Queue *)malloc(sizeof(struct Queue));
+    q->top = 0;
+    q->rearNode = NULL;
+    
+
     //all the commands length are 5 characters so the command input will be taken from this variable.
     char cmd_str[4];
 
@@ -47,81 +106,101 @@ void main_loop()
             stop = 1; //making stop = 1 to stop the while loop. And the terminal shut downs.
         }
 
+        else if(strcmp(cmd_str, "hist") == 0)
+        {
+            printf("\033[0;32m");
+            traverse(q);
+
+        }
+
         else if (strcmp(cmd_str, "cnge") == 0)
         {
             change();
             printf("\033[0;36m");
+            insertion(q, "cnge");
         }
 
         else if (strcmp(cmd_str, "help") == 0)
         {
             help();
             printf("\033[0;36m");
+            insertion(q, "help");
         }
         else if (strcmp(cmd_str, "list") == 0)
         {
             list();
             printf("\033[0;36m");
+            insertion(q, "list");
             
         }
         else if (strcmp(cmd_str, "date") == 0)
         {
             date();
             printf("\033[0;36m");
+            insertion(q, "date");
             
         }
         else if (strcmp(cmd_str, "calc") == 0)
         {
             calc();
             printf("\033[0;36m");
+            insertion(q, "calc");
             
         }
         else if (strcmp(cmd_str, "pcwd") == 0)
         {
             pcwd();
             printf("\033[0;36m");
+            insertion(q, "pcwd");
             
         }
         else if (strcmp(cmd_str, "make") == 0)
         {
             make();
             printf("\033[0;36m");
+            insertion(q, "make");
             
         }
         else if (strcmp(cmd_str, "wrte") == 0)
         {
             wrte();
             printf("\033[0;36m");
+            insertion(q, "wrte");
             
         }
         else if (strcmp(cmd_str, "wrta") == 0)
         {
             wrta();
             printf("\033[0;36m");
+            insertion(q, "wrta");
             
         }
         else if (strcmp(cmd_str, "remo") == 0)
         {
             remo();
             printf("\033[0;36m");
+            insertion(q, "remo");
             
         }
         else if (strcmp(cmd_str, "ccwd") == 0)
         {
             ccwd();
             printf("\033[0;36m");
+            insertion(q, "ccwd");
             
         }
         else if (strcmp(cmd_str, "mkdr") == 0)
         {
             mkdr();
             printf("\033[0;36m");
+            insertion(q, "mkdr");
             
         }
         else if (strcmp(cmd_str, "rmdr") == 0)
         {
             rmdr();
             printf("\033[0;36m");
+            insertion(q, "rmdr");
             
         }
         else if (strcmp(cmd_str, "info") == 0)
@@ -134,59 +213,69 @@ void main_loop()
         {
             clearScreen();
             printf("\033[0;36m");
+            insertion(q, "clr");
 
         }
         else if (strcmp(cmd_str, "read") == 0)
         {
             read_file();
             printf("\033[0;36m");
+            insertion(q, "read");
 
         }
         else if (strcmp(cmd_str, "cfile") == 0)
         {
             copy_file();
             printf("\033[0;36m");
+            insertion(q, "cfile");
 
         }
         else if (strcmp(cmd_str, "sys") == 0)
         {
             int a = info_system();
             printf("\033[0;36m");
+            insertion(q, "sys");
 
         }
         else if (strcmp(cmd_str, "echo") == 0)
         {
             echo();
             printf("\033[0;36m");
+            insertion(q, "echo");
 
         }
         else if (strcmp(cmd_str, "root") == 0)
         {
             rootDisplay();
             printf("\033[0;36m");
+            insertion(q, "root");
 
         }
         else if (strcmp(cmd_str, "rfile") == 0)
         {
             renameFile();
             printf("\033[0;36m");
+            insertion(q, "rfile");
 
         }
         else if (strcmp(cmd_str, "rdr") == 0)
         {
             renameFolder();
             printf("\033[0;36m");
+            insertion(q, "rdr");
 
         }
         else if (strcmp(cmd_str, "getf") == 0)
         {
             getf();
             printf("\033[0;36m");
+            insertion(q, "getf");
 
         }
         else if(strcmp(cmd_str, "findf") == 0){
             findf();
             printf("\033[0;36m");
+            insertion(q, "findf"); 
 
         }
         else
