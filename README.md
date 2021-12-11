@@ -76,6 +76,11 @@ You can clone my repository by executing this:-
 ```
 git clone https://github.com/Shreejan-35/CommandConsole.git
 ```
+**To run CommandConsole in debian and Ubuntu run:-**
+```
+sudo apt-get install wine
+wine CommandConsole.exe
+```
 You can also download the zip file, and then run the CommandConsole.exe file.
   
 ## I have given one screenshot which you can refer to.
