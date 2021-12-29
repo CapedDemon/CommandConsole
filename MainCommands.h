@@ -269,7 +269,6 @@ void list()
 // Function to make a file
 void make()
 {
-
     FILE *fp;
     char name_file[SIZE];
     getchar();
@@ -317,7 +316,6 @@ void read_file()
 //function to remove a file
 void remo()
 {
-
     char name_file[SIZE];
     getchar();
     printf("Enter the file name to delete: ");
@@ -338,7 +336,6 @@ void remo()
 // Function to rename file
 void renameFile()
 {
-
     getchar();
     char old_file[SIZE];
     char new_file_name[SIZE];
@@ -364,7 +361,6 @@ void renameFile()
 //function to remove a directory.
 void rmdr()
 {
-
     int check;
     char dirname[SIZE];
 
@@ -386,7 +382,6 @@ void rmdr()
 // Function to print system information
 int info_system()
 {
-
 #ifdef __linux__
     int r = system("cat /etc/os-release");
     return 1;
@@ -432,7 +427,6 @@ void rootDisplay()
 //a function with which user can append into a file using the terminal.
 void wrta()
 {
-
     FILE *fp;
     FILE *fptr;
     char name_file[SIZE];
@@ -462,7 +456,6 @@ void wrta()
 //a function with which user can write into a file using terminal.
 void wrte()
 {
-
     FILE *fp;
     FILE *fptr;
     char name_file[SIZE];
@@ -491,7 +484,6 @@ void wrte()
 // Function to print current directory
 void pcwd()
 {
-
 #ifdef WINDOWS
 #include <direct.h>
 #define GetCurrentDir _getcwd
@@ -514,7 +506,6 @@ void pcwd()
 // Function to rename folder
 void renameFolder()
 {
-
     getchar();
     char firstname[SIZE], lastname[SIZE];
     printf("Enter the current name of the folder: ");
@@ -538,7 +529,6 @@ void renameFolder()
 // Function to find a file or folder in a folder
 void getf()
 {
-
     getchar();
     char foldername[SIZE];
     printf("Enter the name of the folder or directory first: ");
@@ -569,7 +559,6 @@ void getf()
 // Function to find the location of a word in a file
 void findf()
 {
-
     getchar();
     char word[SIZE];
     FILE *fptr;
