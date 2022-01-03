@@ -217,6 +217,7 @@ void mkdr()
 //function to print the help menu.
 void help()
 {
+    printf("For extra information read the README.md file\n");
     printf("\tIn all the cases first write the command hit enter and then give the arguements\n\n");
 
     printf(">>calc - This command open a terminal calculator and you can do simple calculator operation in this.\n\tThe operaation are - (+, -, * , /, ^(Power of. Ex- 3^2 = 9)\n\tFirst number (operation) Second Number\n\tFor doing operation in decimal give d and for integer give i\n\n\n");
@@ -244,6 +245,7 @@ void help()
     printf(">>getf - This will confirm you that the fille or folder name you have given is present in the directory that you specified.\n\n");
     printf(">>findf - This will find the specified word in a given file and print the line where it is located.\n\n");
     printf(">>hist - This will print all the commands which you have written\n\n");
+	printf(">>game - This will start a cricket game.\n\n");
 }
 
 //function to list all the files in the current directory.

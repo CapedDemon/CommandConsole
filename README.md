@@ -38,6 +38,8 @@ The main program is written in the main.c file and the functions written there a
 - To confirm that a file or folder is present in a directory specified by you: getf
 - To get the number of line of a file in which a specified word is present: findf
 - To get the list of past commands: hist
+- To start a game: game.
+	(A new cricket game is added to this application so that the users can enjoy while doing work. Check Others/cricket.c)
 
 **We have used the concept of *Linked List* and *Queue* in the code.**
 
@@ -82,6 +84,12 @@ sudo apt-get install wine
 wine CommandConsole.exe
 ```
 You can also download the zip file, and then run the CommandConsole.exe file.
+
+# <b>Update<b>
+For updating the CommandConsole application, run the update.sh file.
+**Prerequisite**
+- Git need to installed
+- The folder or directory in which you have kept the application need to have the name CommandConsole or else there can be some error.
   
 ## I have given one screenshot which you can refer to.
 

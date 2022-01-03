@@ -3,6 +3,7 @@ Language: C
 */
 //header files(some are inbuilt and some header files I have created to organize different codes)
 #include "MainCommands.h"
+#include "Others/cricket.c"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -221,6 +222,11 @@ void main_loop()
             read_file();
             insertion(q, "read");
 
+        }
+        else if(strcmp(cmd_str, "game") == 0)
+        {
+            game();
+            insertion(q, "game");
         }
         else if (strcmp(cmd_str, "cfile") == 0)
         {
