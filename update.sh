@@ -10,7 +10,9 @@ then
     
     rm -rf CommandConsole
     git clone https://github.com/Shreejan-35/CommandConsole.git
-    #gh repo clone Shreejan-35/CommandConsole
+    cd CommandConsole
+	echo $USERNAME > root_username.txt
+	echo $PASSWORD > password_root.txt
 else    
     echo "Open any browser and install git, you can directly head over to https://git-scm.com/downloads"
     echo "After downloading and initializing if you want, you can again start this script"
