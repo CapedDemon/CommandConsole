@@ -191,7 +191,7 @@ void echo()
     fgetc(stdin);
     char user_str[1000000];
     fgets(user_str, 1000000, stdin);
-    printf("\033[0;31m");
+    
     printf("%s", user_str);
 }
 

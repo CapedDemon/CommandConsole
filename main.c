@@ -279,7 +279,6 @@ void main_loop()
         {
 
             printf("Error: Wrong Command\n\tRun command which is there. Type help for information\n");
-            printf("\033[0;36m");
         }
     }
 }
