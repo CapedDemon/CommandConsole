@@ -42,6 +42,11 @@ The main program is written in the main.c file and the functions written there a
 - To get the list of past commands: hist
 - To start a game: game.
 	(A new cricket game is added to this application so that the users can enjoy while doing work. Check Others/cricket.c)
+	
+### Internet of things
+Now, in CommandConsole you can find things related to internet like ping to a website, getting the IPv4 address, etc
+The commands are :- 
+- Print the IPv4 address: ipad
 
 **We have used the concept of *Linked List* and *Queue* in the code.**
 
