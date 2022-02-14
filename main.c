@@ -8,6 +8,7 @@ Language: C
 #include <stdlib.h>
 #include <string.h>
 #include <time.h>
+#include "internet.h"
 
 //define variables
 #define SIZE 260
@@ -274,6 +275,11 @@ void main_loop()
             findf();
             insertion(q, "findf"); 
 
+        }
+        else if (strcmp(cmd_str, "ipad") == 0)
+        {
+            ipad();
+            insertion(q, "ipad");
         }
         else
         {
