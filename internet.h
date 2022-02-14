@@ -2,19 +2,23 @@
 implemented in the main.c program. It is the same header file like MainCommands.h */
 
 // libraries
-#include <stdio.h>
-#include <unistd.h>
-#include <sys/types.h>
-#include <stdlib.h>
-#include <string.h>
-#include <sys/socket.h>
-#include <sys/ioctl.h>
-#include <netinet/in.h>
-#include <net/if.h>
-#include <arpa/inet.h>
+#if defined(__linux__) || defined(__unix__) || defined(__APPLE__)
+    #include <winsock.h>
+    #include <stdio.h>
+    #include <unistd.h>
+    #include <sys/types.h>
+    #include <stdlib.h>
+    #include <string.h>
+    #include <sys/socket.h>
+    #include <sys/ioctl.h>
+    #include <netinet/in.h>
+    #include <net/if.h>
+    #include <arpa/inet.h>
+#endif
 
 // first function - printing the ipaddress of the user
 void ipad(){
+#if defined(__linux__) || defined(__unix__) || defined(__APPLE__)
     int n;
     struct ifreq ifr;
     char arr[] = "eth0";
@@ -34,4 +38,8 @@ void ipad(){
 
     // printing the ipaddress
     printf("IPv4 address is:    %s\n", arr, inet_ntoa(( (struct sockaddr_in *)&ifr.ifr_addr)->sin_addr));
+#endif
+#if defined(_WIN32) || defined(_WIN64)
+    system("ipconfig | findstr IPv4");
+#endif
 }
