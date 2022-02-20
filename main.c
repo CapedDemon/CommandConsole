@@ -10,16 +10,13 @@ Language: C
 #include <time.h>
 #include "internet.h"
 
-//define variables
-#define SIZE 260
-
 struct Node{
     char *data;
     struct Node *next;
 };
 struct Queue{
     int top;
-    struct Node* rearNode;
+    struct Node *rearNode;
     struct Node *frontNode;
 };
 
@@ -80,14 +77,20 @@ void main_loop()
     int stop = 0; //intializing stop = 0 so as to stop the while loop when it is 1.
     clearScreen();
     printf("\nWELCOME ");
+    char usernamePrint[10];
     FILE *user;
     user = fopen("root_username.txt", "r");
     char c1;
+    int userCount = 0;
     c1 = fgetc(user);
     while(c1 != EOF){
         printf("%c", c1);
+        usernamePrint[userCount] = c1;
+        userCount++;
         c1 = fgetc(user);
     }
+  
+    usernamePrint[userCount] = '\0';
     printf("\n");
     while (stop != 1) //the condition to stop the while loop.
     {
@@ -95,7 +98,7 @@ void main_loop()
         char *buf;                                //intializing a string to print the current or working directory.
         buf = (char *)malloc(100 * sizeof(char)); //I am using malloc as I don't know how much characters are there in the directory name.
         getcwd(buf, 100);                         //getcwd function is used here
-        printf("(:-)\n[%s] $: ", buf);
+        printf("(:-)%s(root): [%s] $: ", usernamePrint, buf);
         free(buf);
         //taking the command
         

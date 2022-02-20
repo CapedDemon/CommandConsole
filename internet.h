@@ -2,19 +2,18 @@
 implemented in the main.c program. It is the same header file like MainCommands.h */
 
 // libraries
+#include <stdio.h>
+#include <unistd.h>
+#include <sys/types.h>
+#include <stdlib.h>
+#include <string.h>
 #if defined(__linux__) || defined(__unix__) || defined(__APPLE__)
-    #include <stdio.h>
-    #include <unistd.h>
-    #include <sys/types.h>
-    #include <stdlib.h>
-    #include <string.h>
     #include <sys/socket.h>
     #include <sys/ioctl.h>
     #include <netinet/in.h>
     #include <net/if.h>
     #include <arpa/inet.h>
 #endif
-
 // first function - printing the ipaddress of the user
 void ipad(){
 #if defined(__linux__) || defined(__unix__) || defined(__APPLE__)
