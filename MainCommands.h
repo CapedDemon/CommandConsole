@@ -246,8 +246,7 @@ void help()
     printf(">>findf - This will find the specified word in a given file and print the line where it is located.\n\n");
     printf(">>hist - This will print all the commands which you have written\n\n");
 	printf(">>game - This will start a cricket game.\n\n");
-    	printf(">>ipad - This will show the IPv4 address.\n\n");
-	
+  	printf(">>ipad - This will show the IPv4 address.\n\n");
 }
 
 //function to list all the files in the current directory.
