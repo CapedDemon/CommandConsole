@@ -79,7 +79,7 @@ void main_loop()
     printf("\nWELCOME ");
     char usernamePrint[10];
     FILE *user;
-    user = fopen("root_username.txt", "r");
+    user = fopen("etc/userdetails/user.txt", "r");
     char c1;
     int userCount = 0;
     c1 = fgetc(user);
@@ -305,7 +305,7 @@ int main()
     //setting of username and password
     char username[10], password[10], ch;
     FILE *root_passwd;
-    root_passwd = fopen("password_root.txt", "r");
+    root_passwd = fopen("etc/userdetails/passwd.txt", "r");
 
     //first of all cjecking whether there is anything written in the password file.
     fseek(root_passwd, 0, SEEK_END);
@@ -316,8 +316,8 @@ int main()
         //opening the files with write mode
         FILE *wpasswd;
         FILE *w_user;
-        w_user = fopen("root_username.txt", "w");
-        wpasswd = fopen("password_root.txt", "w");
+        w_user = fopen("etc/userdetails/passwd.txt", "w");
+        wpasswd = fopen("etc/userdetails/user.txt", "w");
 
         //the length of the username should be less than 10 charcters and password less than 6 characters
         printf("Give two enters after wrting the username and password.. Length of username should not exceed 10 charcters and password\nshould be of 6 characters.\n\n");
@@ -352,7 +352,7 @@ int main()
         password_existing[strlen(password_existing) - 1] = 0;
 
         FILE *ptr;
-        ptr = fopen("password_root.txt", "r");
+        ptr = fopen("etc/userdetails/passwd.txt", "r");
         c1 = fgetc(ptr);
         int i = 0, i2 = 0, decision = 0, decision2 = 0;
         while (c1 != EOF)
