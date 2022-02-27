@@ -9,7 +9,6 @@ Language: C
 #include <string.h>
 #include <time.h>
 #include "internet.h"
-
 struct Node{
     char *data;
     struct Node *next;

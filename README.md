@@ -72,7 +72,7 @@ If you have docker installed then it is very good. The steps to execute the soft
 ```
 docker run -it shreejan35/commandconsole:version (The latest version is available in the releases).
 ```
-**Recommended 2.7 and above**
+**Recommended 3.4 and above**
 - It will pull the image from the docker hub.
 - When all the things are done it will start the program. 
 - It will be like a normal terminal. First of all type 'list' then check that all the files which are there in the github are shown there. 
@@ -94,6 +94,8 @@ You can also download the zip file, and then run the CommandConsole.exe file.
 
 # <b>Update<b>
 For updating the CommandConsole application, run the update.sh file.
+Now for updation checking, we have launched our version api here - [version api](https://commandweb.herokuapp.com/versions/)
+If the version of your commandconsole version is outdated then it will update, else it will not be updated.
 **Prerequisite**
 - Git need to installed
 - The folder or directory in which you have kept the application need to have the name CommandConsole or else there can be some error.
