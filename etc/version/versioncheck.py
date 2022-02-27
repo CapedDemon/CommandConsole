@@ -8,7 +8,7 @@ length = len(json_data)
 
 newWorkingversion = json_data[length-1]["workingVersion"]
 
-f = open("versionCC.txt", "r")
+f = open("etc/version/versionCC.txt", "r")
 existVersion = f.read()
 f.close()
 
