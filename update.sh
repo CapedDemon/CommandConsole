@@ -5,21 +5,15 @@ read gitDownload
 echo
 if [ "$gitDownload" == "y" ];
 then
-    python etc/version/versioncheck.py
-    if [ -e etc/version/newVersion.txt ]
-    then
-        read -p "USERNAME: " USERNAME
-        read -sp "PASSWORD: " PASSWORD
-        cd ..
+    read -p "USERNAME: " USERNAME
+    read -sp "PASSWORD: " PASSWORD
+    cd ..
         
-        rm -rf CommandConsole
-        git clone https://github.com/Shreejan-35/CommandConsole.git
-        cd CommandConsole
-        echo $USERNAME > etc/userdetails/user.txt
-        echo $PASSWORD > etc/userdetails/passwd.txt
-    else
-        echo "bye"
-    fi
+    rm -rf CommandConsole
+    git clone https://github.com/Shreejan-35/CommandConsole.git
+    cd CommandConsole
+    echo $USERNAME > etc/userdetails/user.txt
+    echo $PASSWORD > etc/userdetails/passwd.txt
 else    
     echo "Open any browser and install git, you can directly head over to https://git-scm.com/downloads"
     echo "After downloading and initializing if you want, you can again start this script"
