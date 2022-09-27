@@ -4,6 +4,6 @@ COPY . /usr/src/main_files
 
 WORKDIR /usr/src/main_files
 
-RUN gcc main.c -o CommandConsole
+RUN g++ main.cpp -o CommandConsole
 
 CMD [ "./CommandConsole" ]
