@@ -5,6 +5,7 @@
 #include <time.h>
 #include <queue>
 #include "MainCommands.hpp"
+#include "maincommands.cpp"
 #include "Others/cricket.hpp"
 #include "internetthings.hpp"
 
@@ -203,10 +204,10 @@ void CClass::cmdTake()
                 MC.ccwd();
             }
 
-            else if (cmdStr == "date")
+            else if (cmdStr == "time")
             {
-                Q.push("date");
-                MC.date();
+                Q.push("time");
+                MC.gettime();
             }
 
             else if (cmdStr == "make")

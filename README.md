@@ -27,7 +27,7 @@ The main program is written in the main.cpp file and the functions written there
 - Calculator: calc
 - Change Current Working Directory: ccwd
 - Clear the Screen: clr
-- Show the date: date
+- Show the time: time
 - Make new directory: mkdr
 - Help(which show all the function to be run): help
 - List all the files and directories: list

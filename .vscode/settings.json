@@ -3,6 +3,15 @@
         "html": "html",
         "chrono": "cpp",
         "iosfwd": "cpp",
-        "iostream": "cpp"
+        "iostream": "cpp",
+        "*.tcc": "cpp",
+        "ctime": "cpp",
+        "iomanip": "cpp",
+        "limits": "cpp",
+        "streambuf": "cpp",
+        "tuple": "cpp",
+        "type_traits": "cpp",
+        "utility": "cpp",
+        "string": "cpp"
     }
 }
