@@ -7,7 +7,7 @@
 #include "MainCommands.hpp"
 #include "maincommands.cpp"
 #include "Others/cricket.hpp"
-#include "internetthings.hpp"
+#include "internetthings.cpp"
 
 using namespace std;
 
@@ -150,7 +150,7 @@ void CClass::cmdTake()
 
         while (CClass::runingcmdloop)
         {
-            cout << "(:-)" << CClass::username << " (root): [" << (MC.pcd()) << "] $: ";
+            cout << "| (:-) " << CClass::username << " (root): [" << (MC.pcd()) << "] $: ";
             getline(cin, cmdStr);
 
             if (cmdStr == "quit")
@@ -162,7 +162,7 @@ void CClass::cmdTake()
 
                 while (!q.empty())
                 {
-                    cout << q.front() << endl;
+                    cout << "|\t" << q.front() << endl;
                     q.pop();
                 }
                 Q.push("hist");
@@ -337,6 +337,10 @@ void CClass::cmdTake()
             {
                 Q.push("ipad");
                 ipad();
+            }
+            else
+            {
+                cout << "|\tGIVE THE RIGHT COMMAND :}>" << endl;
             }
         }
     }
