@@ -30,7 +30,7 @@ private:
     bool runingcmdloop = false;
 
     // intialization to check the time
-    time_t my_time = time(NULL);
+    time_t my_time;
 
     // seeking username and password.
     // Going to make the variables and ask for username and password
@@ -128,9 +128,11 @@ void CClass ::welcomeStatement()
 {
     if (CClass::staringProgram == 1)
     {
+        time(&(CClass::my_time));
+        char buf[50];
         cout << "Welcome to Command Console." << endl
              << endl
-             << "Time: " << ctime(&(CClass::my_time)) << endl
+             << "Time: " << ctime_r(&(CClass::my_time), buf) << endl
              << "(Type help for manual)\n\n";
 
         bool login = CClass::checkANDlogin();
