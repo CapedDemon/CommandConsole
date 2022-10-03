@@ -26,7 +26,7 @@ public:
     char dirname[260];
     void rootChange();
     void help();
-    char *pcd();
+    void pcd();
     void list();
     void ccwd();
     void clearScreen();

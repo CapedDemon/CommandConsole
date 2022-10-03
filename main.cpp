@@ -24,6 +24,7 @@ public:
 
     void welcomeStatement();
     void cmdTake();
+    int showRuncmdloop();
 
 private:
     int staringProgram = 0;
@@ -124,6 +125,11 @@ private:
     }
 };
 
+int CClass::showRuncmdloop()
+{
+    return CClass::runingcmdloop;
+}
+
 void CClass ::welcomeStatement()
 {
     if (CClass::staringProgram == 1)
@@ -142,19 +148,21 @@ void CClass ::welcomeStatement()
 
 void CClass::cmdTake()
 {
-    if (CClass::runingcmdloop == false)
+    if (showRuncmdloop() == false)
         cout << "Bye";
 
     else
     {
         string cmdStr;
-        MainCommands MC(true);
+    MainCommands MC(true);
 
-        while (CClass::runingcmdloop)
+        while (showRuncmdloop())
         {
-            cout << "| (:-) " << CClass::username << " (root): [" << (MC.pcd()) << "] $: ";
+            cout << "| (:-) " << CClass::username << " (root): [";
+            MC.pcd();
+            cout << "] $: ";
             getline(cin, cmdStr);
-
+            Q.push(cmdStr);
             if (cmdStr == "quit")
                 CClass::runingcmdloop = false;
 
@@ -167,156 +175,155 @@ void CClass::cmdTake()
                     cout << "|\t" << q.front() << endl;
                     q.pop();
                 }
-                Q.push("hist");
             }
 
             else if (cmdStr == "cnge")
             {
                 MC.rootChange();
-                Q.push("cnge");
             }
-
+            
             else if (cmdStr == "help")
             {
                 MC.help();
-                Q.push("help");
+
             }
 
             else if (cmdStr == "pcwd")
             {
-                cout << MC.pcd() << endl;
-                Q.push("pcwd");
+                MC.pcd();
+                cout << endl;
+
             }
 
             else if (cmdStr == "list")
             {
-                Q.push("list");
+
                 MC.list();
             }
 
             else if (cmdStr == "clr")
             {
-                Q.push("clr");
+
                 MC.clearScreen();
             }
 
             else if (cmdStr == "ccwd")
             {
-                Q.push("ccwd");
+
                 MC.ccwd();
             }
 
             else if (cmdStr == "time")
             {
-                Q.push("time");
+
                 MC.gettime();
             }
 
             else if (cmdStr == "make")
             {
-                Q.push("make");
+
                 MC.make();
             }
 
             else if (cmdStr == "wrte")
             {
-                Q.push("wrte");
+
                 MC.wrte();
             }
 
             else if (cmdStr == "wrta")
             {
-                Q.push("wrta");
+
                 MC.wrta();
             }
 
             else if (cmdStr == "remo")
             {
-                Q.push("remo");
+
                 MC.remo();
             }
 
             else if (cmdStr == "mkdr")
             {
-                Q.push("mkdr");
+
                 MC.mkdr();
             }
 
             else if (cmdStr == "rmdr")
             {
-                Q.push("rmdr");
+
                 MC.rmdr();
             }
 
             else if (cmdStr == "info")
             {
-                Q.push("info");
+
                 MC.info();
             }
 
             else if (cmdStr == "read")
             {
-                Q.push("read");
+
                 MC.read();
             }
 
             else if (cmdStr == "cfile")
             {
-                Q.push("cfile");
+
                 MC.copyfile();
             }
 
             else if (cmdStr == "sys")
             {
-                Q.push("sys");
+
                 int a = MC.info_system();
             }
 
             else if (cmdStr == "echo")
             {
-                Q.push("echo");
+
                 MC.echo();
             }
 
             else if (cmdStr == "root")
             {
-                Q.push("root");
+
                 MC.rootDisplay();
             }
 
             else if (cmdStr == "rfile")
             {
-                Q.push("rfile");
+
                 MC.renameFile();
             }
 
             else if (cmdStr == "rdr")
             {
-                Q.push("rdr");
+
                 MC.renameDir();
             }
 
             else if (cmdStr == "getf")
             {
-                Q.push("getf");
+
                 MC.getf();
             }
 
             else if (cmdStr == "findf")
             {
-                Q.push("findf");
+
                 MC.findf();
             }
 
             else if (cmdStr == "calc")
             {
-                Q.push("calc");
+
                 MC.calc();
             }
 
             else if (cmdStr == "game")
             {
-                Q.push("game");
+
                 char gdec;
                 cout << "Do you want to play the game (y/n) - ";
                 cin.sync();
@@ -337,7 +344,7 @@ void CClass::cmdTake()
 
             else if (cmdStr == "ipad")
             {
-                Q.push("ipad");
+
                 ipad();
             }
             else

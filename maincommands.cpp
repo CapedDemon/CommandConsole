@@ -113,11 +113,11 @@ void MainCommands::help()
     printf("|\t>>ipad - This will show the IPv4 address.\n|\n");
 }
 
-char *MainCommands::pcd()
+void MainCommands::pcd()
 {
     char *tmp = new char[256];
     getcwd(tmp, 256);
-    return tmp;
+    cout << tmp ;
 }
 
 void MainCommands::list()

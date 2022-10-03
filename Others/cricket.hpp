@@ -1,6 +1,8 @@
 #include <iostream>
 #include <math.h>
 #include <time.h>
+#include <random>
+#include <chrono>
 
 using namespace std;
 
@@ -24,12 +26,9 @@ cricket::cricket(int start)
 
 int cricket::random_selector(int lower, int upper, int count)
 {
-    int num;
-    for (int i = 0; i < count; i++)
-    {
-        num = (rand() % (upper - lower + 1)) + lower;
-    }
-    return num;
+    mt19937 rng(chrono::steady_clock::now().time_since_epoch().count());
+    uniform_int_distribution<int> distrib(1, 6);
+    return distrib(rng);
 }
 
 int cricket::playerBat(int done, int computerRun)
@@ -216,4 +215,5 @@ void cricket::cricketGame()
     {
         cout << "No Problem\n";
     }
+    getchar();
 }
