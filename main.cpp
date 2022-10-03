@@ -185,145 +185,121 @@ void CClass::cmdTake()
             else if (cmdStr == "help")
             {
                 MC.help();
-
             }
 
             else if (cmdStr == "pcwd")
             {
                 MC.pcd();
                 cout << endl;
-
             }
 
             else if (cmdStr == "list")
             {
-
                 MC.list();
             }
 
             else if (cmdStr == "clr")
             {
-
                 MC.clearScreen();
             }
 
             else if (cmdStr == "ccwd")
             {
-
                 MC.ccwd();
             }
 
             else if (cmdStr == "time")
             {
-
                 MC.gettime();
             }
 
             else if (cmdStr == "make")
             {
-
                 MC.make();
             }
 
             else if (cmdStr == "wrte")
             {
-
                 MC.wrte();
             }
 
             else if (cmdStr == "wrta")
             {
-
                 MC.wrta();
             }
 
             else if (cmdStr == "remo")
             {
-
                 MC.remo();
             }
 
             else if (cmdStr == "mkdr")
             {
-
                 MC.mkdr();
             }
 
             else if (cmdStr == "rmdr")
             {
-
                 MC.rmdr();
             }
 
             else if (cmdStr == "info")
             {
-
                 MC.info();
             }
 
             else if (cmdStr == "read")
             {
-
                 MC.read();
             }
 
             else if (cmdStr == "cfile")
             {
-
                 MC.copyfile();
             }
 
             else if (cmdStr == "sys")
             {
-
                 int a = MC.info_system();
             }
 
             else if (cmdStr == "echo")
             {
-
                 MC.echo();
             }
 
             else if (cmdStr == "root")
             {
-
                 MC.rootDisplay();
             }
 
             else if (cmdStr == "rfile")
             {
-
                 MC.renameFile();
             }
 
             else if (cmdStr == "rdr")
             {
-
                 MC.renameDir();
             }
 
             else if (cmdStr == "getf")
             {
-
                 MC.getf();
             }
 
             else if (cmdStr == "findf")
             {
-
                 MC.findf();
             }
 
             else if (cmdStr == "calc")
             {
-
                 MC.calc();
             }
 
             else if (cmdStr == "game")
             {
-
                 char gdec;
                 cout << "Do you want to play the game (y/n) - ";
                 cin.sync();
@@ -344,7 +320,6 @@ void CClass::cmdTake()
 
             else if (cmdStr == "ipad")
             {
-
                 ipad();
             }
             else
