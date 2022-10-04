@@ -1,21 +1,53 @@
 [![CodeFactor](https://www.codefactor.io/repository/github/shreejan-35/commandconsole/badge)](https://www.codefactor.io/repository/github/shreejan-35/commandconsole)
+
 <p align="left"> <a href="https://www.gnu.org/software/bash/" target="_blank"> <img src="https://www.vectorlogo.zone/logos/gnu_bash/gnu_bash-icon.svg" alt="bash" width="40" height="40"/> </a>
 
-# **CommandConsole**
-Our official docs website - *under development*
+<div align="center">
+<h1 align="center">CommandConsole</h1>
 <br>
 As the name suggests this is a terminal like software. Like a normal terminal in linux or command prompt in windows, it also works like the same. It is made using C++ language and my motive of building this software is to refresh my C++ language skills and to make something which can take command and work.
-
+<br/>
 ![](https://github.com/Shreejan-35/CommandConsole/blob/main/images/CommandLogo.png)
+</div>
 
-# **Feautures**
-- Light Weight 
+<details>
+  <summary>Table of Contents</summary>
+  <ol>
+    <li>
+      <a href="#features">FEATURES</a>
+    </li>
+    <li>
+      <a href="#documentation">DOCUMENTATION</a>
+      <ul>
+        <li><a href="#commands">COMMANDS</a></li>
+		<li><a href="#internet">INTERNET</a></li>
+		<li><a href="#important">IMPORTANT</a></li>
+      </ul>
+    </li>
+    <li><a href="#getting-sarted">GETTING STARTED</a>
+		<ul>
+			<li><a href=#screenshot>SCREENSHOT</a>
+		</ul>
+	</li>
+    <li><a href="#history">HISTORY</a></li>
+    <li><a href="#contributing">CONTRIBUTING</a></li>
+    <li><a href="#support">SUPPORT</a></li>
+    <li><a href="#license">LICENSE</a></li>
+  </ol>
+</details>
+
+## **FEATURES**
+
+- Light Weight
 - Fast
 - Secure
 - Cross-Platform
 - User friendly
 
-# <b>Documentation</b>
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## **Documentation**
+
 ![](https://github.com/Shreejan-35/CommandConsole/blob/main/images/Overview.jpg)
 
 <br/>
@@ -23,7 +55,8 @@ The main program is written in the main.cpp file and the functions written there
 
 <br/>
 
-### The list of functions are:
+### Commands:
+
 - Calculator: calc
 - Change Current Working Directory: ccwd
 - Clear the Screen: clr
@@ -49,68 +82,112 @@ The main program is written in the main.cpp file and the functions written there
 - To get the number of line of a file in which a specified word is present: findf
 - To get the list of past commands: hist
 - To start a game: game.
-	(A new cricket game is added to this application so that the users can enjoy while doing work. Check Others/cricket.c)
-	
-### Internet of things
+  (A new cricket game is added to this application so that the users can enjoy while doing work. Check Others/cricket.cpp)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+### Internet
+
 Now, in CommandConsole you can find things related to internet like ping to a website, getting the IPv4 address, etc
-The commands are :- 
+The commands are :-
+
 - Print the IPv4 address: ipad
 
-**We have used the concept of *Queue* in the code using the stl library.**
+**We have used the concept of _Queue_ in the code using the stl library.**
 
 All the functions are written in **MainCommands.hpp**
 
-## Things to remember while executing the application:
-- Provide the correct command or else it will show "Error: Wrong Command. Run command which is there. Type help for information".
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+### Important:
+
+- Provide the correct command or else it will show "GIVE THE RIGHT COMMAND :}>".
 - Type quit to stop the terminal.
 - When changing the directory provide the exact name of the directory.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
 ## <br/>
 
-# <b>Getting Started<b/>
+## **GETTING STARTED**
+
 ![](https://github.com/Shreejan-35/CommandConsole/blob/main/images/Download.jpg)
 
-
 If you have docker installed then it is very good. The steps to execute the software using docker are as follows:-
-- type :- 
+
+- type :-
+
 ```
 docker run -it shreejan35/commandconsole:version (The latest version is available in the releases).
 ```
-**Recommended 3.5 and above**
+
+_Try to use the laterst version which is bug free_
+
 - It will pull the image from the docker hub.
-- When all the things are done it will start the program. 
-- It will be like a normal terminal. First of all type 'list' then check that all the files which are there in the github are shown there. 
+- When all the things are done it will start the program.
+- It will be like a normal terminal. First of all type 'list' then check that all the files which are there in the github are shown there.
 - Don't do anything there or else the software will not work as that is the only working directory.
 - I have made another directory for you all, i.e, home. Go there by using 'ccwd' command.
 - Finally test all the commands.
 - Here is my docker repository link - https://hub.docker.com/repository/docker/shreejan35/commandconsole
-  
-You can clone my repository by executing this:- 
+
+You can clone my repository by executing this:-
+
 ```
 git clone https://github.com/Shreejan-35/CommandConsole.git
 ```
-**To run CommandConsole in debian and Ubuntu run:-**
+
+**To run CommandConsole in linux/unix run:-**
+
 ```
 sudo apt-get install wine
 wine CommandConsole.exe
 ```
+
 You can also download the zip file, and then run the CommandConsole.exe file.
 
-# <b>Update<b>
-For updating the CommandConsole application, run the update.sh file.
-Now for updation checking, we have launched our version api here - *under development*
-
 **Prerequisite**
+
 - Git need to be installed
 - The folder or directory in which you have kept the application need to have the name CommandConsole or else there can be some error.
-  
-## I have given one screenshot which you can refer to.
+
+### Screenshot
 
 ![](https://github.com/Shreejan-35/CommandConsole/blob/main/images/Screenshot.JPG)
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-# **History**
-Probably saying the Command Console is written in C which you can check in the previous versions/releases.
-But with modern days comes modern tech. which is needed. That's why it is implemented in c++.
 
-## License is GNU Public License.
- 
+## **HISTORY**
+
+> Probably saying the Command Console is written in C which you can check in the previous versions/releases.
+> But with modern days comes modern tech. which is needed. That's why it is implemented in c++.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## **CONTIBUTING**
+
+Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+
+If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
+Don't forget to give the project a star! Thanks again!
+
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b CommandConsole`)
+3. Commit your Changes (`git commit -m 'Add some advices'`)
+4. Push to the Branch (`git push origin CommandConsole`)
+5. Open a Pull Request
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## **SUPPORT**
+Support me by giving a ✨ to this project
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## LICENSE
+The license is GNU public license see more n LICENSE
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 **This is all the things about my program. If you like it, then please share with others. This is a project which the begineers as well as intermediate programmers can build. Support me by following my github account. Thank you.**

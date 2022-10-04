@@ -39,6 +39,36 @@ void ipad(){
     printf("IPv4 address is:    %s\n", arr, inet_ntoa(( (struct sockaddr_in *)&ifr.ifr_addr)->sin_addr));
 #endif
 #if defined(_WIN32) || defined(_WIN64)
-    system("ipconfig | findstr IPv4");
+#include <winsock.h>
+#include <limits.h>
+#include <stdlib.h>
+#include <unistd.h>
+#define INFO_BUFFER_SIZE 32767
+    TCHAR infoBuf[INFO_BUFFER_SIZE];
+    DWORD bufCharCount = INFO_BUFFER_SIZE;
+
+    if (!GetComputerName(infoBuf, &bufCharCount))
+        cout << (TEXT("GetComputerName"));
+    
+    WSADATA ws;
+    int res = WSAStartup(MAKEWORD(2,2), &ws);
+    if (res)
+    {
+        cout << "Failed to intialize" << res << endl;
+    }
+
+    struct hostent *host_info;
+    struct in_addr addr;
+    DWORD dw;
+    char * hostname = (char *) infoBuf;
+    host_info = gethostbyname(hostname);
+    cout << "|\tHostname : " << host_info->h_name << endl;
+    int i=0;
+    while (host_info->h_addr_list[i] != 0)
+    {
+        addr.s_addr = *(u_long *)host_info->h_addr_list[i++];
+        cout << "|\tIP Address " << inet_ntoa(addr) << endl; // inet_ntoa function converts IPv4 address to ASCII string in Internet standard dotted-decimal format.
+    }
+
 #endif
 }
