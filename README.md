@@ -1,5 +1,12 @@
 <a name="readme-top"></a>
+![](https://img.shields.io/maintenance/yes/2022)
+![](https://img.shields.io/readthedocs/cplusplus)
+![](https://img.shields.io/github/stars/Shreejan-35/CommandConsole)
+![](https://img.shields.io/github/last-commit/Shreejan-35/CommandConsole)
+
 [![CodeFactor](https://www.codefactor.io/repository/github/shreejan-35/commandconsole/badge)](https://www.codefactor.io/repository/github/shreejan-35/commandconsole)
+![](https://img.shields.io/github/license/Shreejan-35/CommandConsole)
+![](https://img.shields.io/github/issues/Shreejan-35/CommandConsole)
 
 <p align="left"> <a href="https://www.gnu.org/software/bash/" target="_blank"> <img src="https://www.vectorlogo.zone/logos/gnu_bash/gnu_bash-icon.svg" alt="bash" width="40" height="40"/> </a>
 
