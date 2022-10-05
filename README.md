@@ -12,6 +12,8 @@
 
 <div align="center">
 <h1 align="center">CommandConsole</h1>
+<h4 align="center">Join our discord - </h4>
+<a href="https://discord.gg/ThqEgJVn">CommandConsole Server</a>
 <br>
 As the name suggests this is a terminal like software. Like a normal terminal in linux or command prompt in windows, it also works like the same. It is made using C++ language and my motive of building this software is to refresh my C++ language skills and to make something which can take command and work.
 <br/>
