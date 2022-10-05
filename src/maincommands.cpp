@@ -5,7 +5,9 @@
 #include <dirent.h>
 #include <ctime>
 #include <time.h>
-#include <windows.h>
+#include <filesystem>
+#include <sys/stat.h>
+#include <sys/types.h>
 #include "MainCommands.hpp"
 
 void MainCommands::rootChange()
@@ -159,6 +161,7 @@ void MainCommands::clearScreen()
 #endif
 
 #if defined(_WIN32) || defined(_WIN64)
+#include <windows.h>
     COORD topLeft = {0, 0};
     HANDLE console = GetStdHandle(STD_OUTPUT_HANDLE);
     CONSOLE_SCREEN_BUFFER_INFO screen;
@@ -242,14 +245,28 @@ void MainCommands::remo()
 
 void MainCommands::mkdr()
 {
+#if defined(__linux__) || defined(__unix__) || defined(__APPLE__)
     cout << "|\tEnter the name of the folder or a new path - ";
-    getcwd(dirname, 260);
+    cin.sync();
+    cin.getline(dirname, 260);
+    if (mkdir(dirname, 0777) == -1)
+    {
+        cout << "|\tCannot create directory\n";
+    }
+    else
+        cout << "|\tDirectory created\n";
+#endif
+#if defined(__WIN32) || defined(__WIN64)
+    cout << "|\tEnter the name of the folder or a new path - ";
+    cin.sync();
+    cin.getline(dirname, 260);
     if (mkdir(dirname) == -1)
     {
         cout << "|\tCannot create directory\n";
     }
     else
         cout << "|\tDirectory created\n";
+#endif
 }
 
 void MainCommands::rmdr()
@@ -309,25 +326,16 @@ void MainCommands::copyfile()
 int MainCommands::info_system()
 {
 #if defined(__linux__) || defined(__unix__) || defined(__APPLE__)
-#include <sys/sysinfo.h>
-    struct sysinfo info;
-    ::sysinfo(&info);
-
-    // 1 Gigabyte = 1024 megabytes = 1024 * 1024 kbytes = 1024 * 1024 * 1024 bytes;
-    constexpr double factor = 1024 * 1024 * 1024;
-    constexpr uint64_t one_day_to_seconds = 24 * 60 * 60;
-
-    cout << "|\t [*] System uptime since boot (seconds) = " << info.uptime << '\n'
-         << "|\t [*] System uptime since boot    (days) = " << info.uptime / one_day_to_seconds << '\n'
-         << "|\t [*]              Total RAM memory (Gb) = " << info.totalram / factor << '\n'
-         << "|\t [*]              Free  RAM memory (Gb) = " << info.freeram / factor << '\n'
-         << "|\t [*]                    Total SWAP (Gb) = " << info.totalswap / factor << '\n'
-         << "|\t [*]                     Free SWAP (Gb) = " << info.freeswap / factor << '\n'
-         << "|\t [*]        Number of processes running = " << info.procs << '\n'
-         << "|\t\n";
+    auto ifs = std::ifstream("/proc/cpuinfo");
+    std::string line;
+    while (std::getline(ifs, line))
+    {
+        std::cout << line << '\n';
+    }
 #endif
 
 #if defined(__WIN32) || defined(__WIN64)
+#include <windows.h>
     SYSTEM_INFO siSysInfo;
 
     // Copy the hardware information to the SYSTEM_INFO structure.

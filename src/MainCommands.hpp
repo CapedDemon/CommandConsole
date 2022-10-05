@@ -5,8 +5,12 @@
 #include <dirent.h>
 #include <ctime>
 #include <time.h>
+#include <filesystem>
+#include <sys/stat.h>
+#include <sys/types.h>
+#if defined(_WIN32) || defined(_WIN64)
 #include <windows.h>
-
+#endif
 #pragma once
 
 using namespace std;

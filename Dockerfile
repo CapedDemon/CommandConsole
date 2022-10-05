@@ -1,9 +1,9 @@
 FROM gcc:11.2.0
 
-COPY . /usr/src/main_files
+COPY . /usr/main_files
 
-WORKDIR /usr/src/main_files
+WORKDIR /usr/main_files
 
-RUN g++ main.cpp -o CommandConsole
+RUN g++ src/main.cpp -o CommandConsole
 
 CMD [ "./CommandConsole" ]
