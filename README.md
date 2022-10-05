@@ -91,7 +91,7 @@ The main program is written in the main.cpp file and the functions written there
 - To get the number of line of a file in which a specified word is present: findf
 - To get the list of past commands: hist
 - To start a game: game.
-  (A new cricket game is added to this application so that the users can enjoy while doing work. Check Others/cricket.cpp)
+  (A new cricket game is added to this application so that the users can enjoy while doing work. Check Others/cricket.hpp)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
