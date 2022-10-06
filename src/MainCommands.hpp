@@ -1,3 +1,4 @@
+#pragma once
 #include <iostream>
 #include <unistd.h>
 #include <ios>
@@ -11,20 +12,20 @@
 #if defined(_WIN32) || defined(_WIN64)
 #include <windows.h>
 #endif
-#pragma once
 
 using namespace std;
-int BUFFER_SIZE = 4096;
 
-    class MainCommands
+class maincommands
 {
 private:
     bool access;
 
 public:
-    MainCommands(bool access)
+    int buffersize = 4096;
+    
+    maincommands(bool access)
     {
-        MainCommands::access = access;
+        maincommands::access = access;
     }
     string filename;
     char dirname[260];

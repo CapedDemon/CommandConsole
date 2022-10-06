@@ -8,11 +8,14 @@
 #include <filesystem>
 #include <sys/stat.h>
 #include <sys/types.h>
-#include "MainCommands.hpp"
+#include "maincommands.hpp"
 
-void MainCommands::rootChange()
+void maincommands::rootChange()
 {
-    string username, password, expassword, expasspath = "root/userdetails/passwd.txt";
+    string username;
+    string password;
+    string expassword;
+    string expasspath = "root/userdetails/passwd.txt";
     ifstream exPass(expasspath);
 
     getline(exPass, expassword);
@@ -28,7 +31,8 @@ void MainCommands::rootChange()
 
         if (decision == "u")
         {
-            string userpath = "root/userdetails/user.txt", newUsername;
+            string userpath = "root/userdetails/user.txt";
+            string newUsername;
             ofstream userFile(userpath);
             userFile.clear();
 
@@ -36,12 +40,12 @@ void MainCommands::rootChange()
             getline(cin, newUsername);
 
             userFile << newUsername;
-            userFile.close();
         }
 
         else if (decision == "p")
         {
-            string passpath = "root/userdetails/passwd.txt", newPasswd;
+            string passpath = "root/userdetails/passwd.txt";
+            string newPasswd;
             ofstream passFile(passpath);
             passFile.clear();
 
@@ -49,12 +53,14 @@ void MainCommands::rootChange()
             getline(cin, newPasswd);
 
             passFile << newPasswd;
-            passFile.close();
         }
 
         else if (decision == "b")
         {
-            string passpath = "root/userdetails/passwd.txt", newPasswd, userpath = "root/userdetails/user.txt", newUsername;
+            string passpath = "root/userdetails/passwd.txt";
+            string newPasswd;
+            string userpath = "root/userdetails/user.txt";
+            string newUsername;
             ofstream passFile(passpath);
             passFile.clear();
             ofstream userFile(userpath);
@@ -67,8 +73,6 @@ void MainCommands::rootChange()
 
             userFile << newUsername;
             passFile << newPasswd;
-            userFile.close();
-            passFile.close();
         }
 
         else
@@ -78,70 +82,71 @@ void MainCommands::rootChange()
     {
         cout << "|\tOOPS ! Password didn't match try again.\n";
     }
-    exPass.close();
 }
 
-void MainCommands::help()
+void maincommands::help()
 {
-    printf("|\tFor extra information read the README.md file\n");
-    printf("|\tIn all the cases first write the command hit enter and then give the arguements\n|\t\n");
+    cout << ("|\tFor extra information read the README.md file\n");
+    cout << ("|\tIn all the cases first write the command hit enter and then give the arguements\n|\t\n");
 
-    printf("|\t>>calc - This command open a terminal calculator and you can do simple calculator operation in this.\n|\tThe operaation are - (+, -, * , /, ^(Power of. Ex- 3^2 = 9)\n|\tFirst number (operation) Second Number\n|\tFor doing operation in decimal give d and for integer give i\n|\t\n|\t\n");
-    printf("|\t>>time - This command prints the current date and time\n|\t\n");
-    printf("|\t>>make - This command will make a file for you and you need to give command which type of extension do you want.\n|\n");
-    printf("|\t>>remo - This command will remove a file\n|\n");
-    printf("|\t>>list - This will print the files and folders in your directory\n|\n");
-    printf("|\t>>wrte - This will write in the file you will give. Start writing the text with a space.\n|\n");
-    printf("|\t>>wrta - This will append in your file. Start writing the text with a space and tehn write all the things which you want.\n|\tFor example - Suppose there is hello initially written. So you want write hi with a space between hello and hi,\n|\t so you should give two spaces before writing in the terminal\n|\n");
-    printf("|\t>>quit - write quit and hit enter to exit the terminal\n|\n");
-    printf("|\t>>pcwd - Print Current Working Directory\n|\n");
-    printf("|\t>>ccwd - Change Current Working Directory\n|\n");
-    printf("|\t>>mkdr - This will make a folder in the current directory\n|\n");
-    printf("|\t>>rmdr - This will remove a folder in the current directory\n|\n");
-    printf("|\t>>info - This will show you the details of the STerminal\n|\n");
-    printf("|\t>>clr - This will clear the screen of the terminal\n|\n");
-    printf("|\t>>read - This will print the content of the file.\n|\n");
-    printf("|\t>>cnge - This will change your username and password\n|\n");
-    printf("|\t>>cfile - This will copy the contents of one file to another file.\n|\n");
-    printf("|\t>>sys - This will print the information of your OS.\n|\n");
-    printf("|\t>>echo - This will print anything which you have given. After writing echo press enter then write whatever you want and press enter.\n|\n");
-    printf("|\t>>root - This will print the username and password\n|\n");
-    printf("|\t>>rfile - This will rename the file with the name you want.\n|\n");
-    printf("|\t>>rdr - This will rename the folder with the name you want.\n|\n");
-    printf("|\t>>getf - This will confirm you that the fille or folder name you have given is present in the directory that you specified.\n|\n");
-    printf("|\t>>findf - This will find the specified word in a given file and print the line where it is located.\n|\n");
-    printf("|\t>>hist - This will print all the commands which you have written\n|\n");
-    printf("|\t>>game - This will start a cricket game.\n|\n");
-    printf("|\t>>ipad - This will show the IPv4 address.\n|\n");
+    cout << ("|\t>>calc - This command open a terminal calculator and you can do simple calculator operation in this.\n|\tThe operaation are - (+, -, * , /, ^(Power of. Ex- 3^2 = 9)\n|\tFirst number (operation) Second Number\n|\tFor doing operation in decimal give d and for integer give i\n|\t\n|\t\n");
+    cout << ("|\t>>time - This command prints the current date and time\n|\t\n");
+    cout << ("|\t>>make - This command will make a file for you and you need to give command which type of extension do you want.\n|\n");
+    cout << ("|\t>>remo - This command will remove a file\n|\n");
+    cout << ("|\t>>list - This will print the files and folders in your directory\n|\n");
+    cout << ("|\t>>wrte - This will write in the file you will give. Start writing the text with a space.\n|\n");
+    cout << ("|\t>>wrta - This will append in your file. Start writing the text with a space and tehn write all the things which you want.\n|\tFor example - Suppose there is hello initially written. So you want write hi with a space between hello and hi,\n|\t so you should give two spaces before writing in the terminal\n|\n");
+    cout << ("|\t>>quit - write quit and hit enter to exit the terminal\n|\n");
+    cout << ("|\t>>pcwd - Print Current Working Directory\n|\n");
+    cout << ("|\t>>ccwd - Change Current Working Directory\n|\n");
+    cout << ("|\t>>mkdr - This will make a folder in the current directory\n|\n");
+    cout << ("|\t>>rmdr - This will remove a folder in the current directory\n|\n");
+    cout << ("|\t>>info - This will show you the details of the STerminal\n|\n");
+    cout << ("|\t>>clr - This will clear the screen of the terminal\n|\n");
+    cout << ("|\t>>read - This will print the content of the file.\n|\n");
+    cout << ("|\t>>cnge - This will change your username and password\n|\n");
+    cout << ("|\t>>cfile - This will copy the contents of one file to another file.\n|\n");
+    cout << ("|\t>>sys - This will print the information of your OS.\n|\n");
+    cout << ("|\t>>echo - This will print anything which you have given. After writing echo press enter then write whatever you want and press enter.\n|\n");
+    cout << ("|\t>>root - This will print the username and password\n|\n");
+    cout << ("|\t>>rfile - This will rename the file with the name you want.\n|\n");
+    cout << ("|\t>>rdr - This will rename the folder with the name you want.\n|\n");
+    cout << ("|\t>>getf - This will confirm you that the fille or folder name you have given is present in the directory that you specified.\n|\n");
+    cout << ("|\t>>findf - This will find the specified word in a given file and print the line where it is located.\n|\n");
+    cout << ("|\t>>hist - This will print all the commands which you have written\n|\n");
+    cout << ("|\t>>game - This will start a cricket game.\n|\n");
+    cout << ("|\t>>ipad - This will show the IPv4 address.\n|\n");
 }
 
-void MainCommands::pcd()
+void maincommands::pcd()
 {
-    char *tmp = new char[256];
+    char *tmp;
+    tmp = new char[256];
     getcwd(tmp, 256);
     cout << tmp ;
 }
 
-void MainCommands::list()
+void maincommands::list()
 {
-    DIR *dir = opendir(".");
-    if (dir == NULL)
+    DIR *dir;
+    dir = opendir(".");
+    if (dir == nullptr)
     {
         printf("|\tNothing in this directory\n\n");
     }
 
     struct dirent *entity;
     entity = readdir(dir);
-    while (entity != NULL)
+    while (entity != nullptr)
     {
-        printf("|\t%s\n", entity->d_name);
+        cout << "|\t" << entity->d_name << endl;
         entity = readdir(dir);
     }
-    printf("|\t\n|\t\n");
+    cout << ("|\t\n|\t\n");
     closedir(dir);
 }
 
-void MainCommands::ccwd()
+void maincommands::ccwd()
 {
     char nwd[256];
     cout << "|\tGive the path of the new directory - ";
@@ -149,12 +154,12 @@ void MainCommands::ccwd()
     cin.getline(nwd, 256);
 
     if (chdir(nwd) == 0)
-        printf("|\tsuccessfully changed\n");
+        cout << ("|\tsuccessfully changed\n");
     else
-        printf("|\tcannot change directory\n");
+        cout << ("|\tcannot change directory\n");
 }
 
-void MainCommands::clearScreen()
+void maincommands::clearScreen()
 {
 #if defined(__linux__) || defined(__unix__) || defined(__APPLE__)
     cout << "\033[2J\033[1;1H";
@@ -177,17 +182,17 @@ void MainCommands::clearScreen()
 #endif
 }
 
-void MainCommands::gettime()
+void maincommands::gettime()
 {
     // variable to get the time
-    time_t ltime;
+    time_t computertime;
     char buf[50];
 
-    time(&ltime);
-    printf("|\tThe time is %s |\n", ctime_r(&ltime, buf));
+    time(&computertime);
+    printf("|\tThe time is %s |\n", ctime_r(&computertime, buf));
 }
 
-void MainCommands::make()
+void maincommands::make()
 {
     fstream file;
     cout << "|\tEnter a new filename with its file extension - ";
@@ -199,10 +204,9 @@ void MainCommands::make()
         cout << "|\terror\n";
     else
         cout << "|\tFile created\n";
-    file.close();
 }
 
-void MainCommands::wrte()
+void maincommands::wrte()
 {
     string text;
     cout << "|\tEnter the filename or file path to write in it - ";
@@ -212,10 +216,9 @@ void MainCommands::wrte()
     cout << "|\tEnter the text which is to be written in the file - " << endl;
     getline(cin, text);
     writeFile << text;
-    writeFile.close();
 }
 
-void MainCommands::wrta()
+void maincommands::wrta()
 {
     string text;
     cout << "|\tEnter the filename or file path to append something in it - ";
@@ -226,10 +229,9 @@ void MainCommands::wrta()
     cout << "|\tEnter the text to append in the file - " << endl;
     getline(cin, text);
     appendFile << text << endl;
-    appendFile.close();
 }
 
-void MainCommands::remo()
+void maincommands::remo()
 {
     char fremove[20];
     cout << "|\tEnter the filename or file path to remove - ";
@@ -243,12 +245,12 @@ void MainCommands::remo()
         cout << "|\tCannot delete" << endl;
 }
 
-void MainCommands::mkdr()
+void maincommands::mkdr()
 {
 #if defined(__linux__) || defined(__unix__) || defined(__APPLE__)
     cout << "|\tEnter the name of the folder or a new path - ";
     cin.sync();
-    cin.getline(dirname, 260);
+    cin.getline(dirname, FILENAME_MAX);
     if (mkdir(dirname, 0777) == -1)
     {
         cout << "|\tCannot create directory\n";
@@ -259,7 +261,7 @@ void MainCommands::mkdr()
 #if defined(__WIN32) || defined(__WIN64)
     cout << "|\tEnter the name of the folder or a new path - ";
     cin.sync();
-    cin.getline(dirname, 260);
+    cin.getline(dirname, FILENAME_MAX);
     if (mkdir(dirname) == -1)
     {
         cout << "|\tCannot create directory\n";
@@ -269,23 +271,23 @@ void MainCommands::mkdr()
 #endif
 }
 
-void MainCommands::rmdr()
+void maincommands::rmdr()
 {
     cout << "|\tEnter the name of the folder or a path to delete - ";
     cin.sync();
-    cin.getline(dirname, 260);
+    cin.getline(dirname, FILENAME_MAX);
     if (rmdir(dirname) == 1)
         cout << "|\tDirectory deleted\n";
     else
         cout << "|\tCannot delete directory\n";
 }
 
-void MainCommands::info()
+void maincommands::info()
 {
     cout << "|\tCommand Console is a fast, light-weight and secure shell.\nIt can run cross-platform - wndows, macOS and linux.\nType help to know about the commands.\nFor any query write us email - dolaishreejan@gmail.com\n\n";
 }
 
-void MainCommands::read()
+void maincommands::read()
 {
     string text;
     cout << "|\tEnter a filename or its path to read it - ";
@@ -300,15 +302,18 @@ void MainCommands::read()
         cout << text << endl
              << "|\t";
     }
-    readFile.close();
 }
 
-void MainCommands::copyfile()
+void maincommands::copyfile()
 {
-    string mfname, cfname, ctext;
+    string mfname;
+    string cfname;
+    string ctext;
     cout << "|\tEnter the filename or specify to file path that is to be copied - ";
+    cin.sync();
     getline(cin, mfname);
     cout << "|\tNow enter the the name of the file in which the contents of " << mfname << " to be copied - \n";
+    cin.sync();
     getline(cin, cfname);
 
     ofstream copiedfile;
@@ -318,12 +323,9 @@ void MainCommands::copyfile()
     {
         copiedfile << ctext << endl;
     }
-    
-    readFile.close();
-    copiedfile.close();
 }
 
-int MainCommands::info_system()
+int maincommands::info_system()
 {
 #if defined(__linux__) || defined(__unix__) || defined(__APPLE__)
     auto ifs = std::ifstream("/proc/cpuinfo");
@@ -353,16 +355,18 @@ int MainCommands::info_system()
     return 0;
 }
 
-void MainCommands::echo()
+void maincommands::echo()
 {
     string text;
     getline(cin, text);
     cout << text << endl;
 }
 
-void MainCommands::rootDisplay()
+void maincommands::rootDisplay()
 {
-    string passwd, expasswd, expasspath = "root/userdetails/passwd.txt";
+    string passwd;
+    string expasswd;
+    string expasspath = "root/userdetails/passwd.txt";
     ifstream exPasswordFile(expasspath);
     getline(exPasswordFile, expasswd);
     cout << "|\tEnter the password - ";
@@ -374,105 +378,105 @@ void MainCommands::rootDisplay()
         getline(userFile, username);
         cout << "|\tUsername:- " << username << endl;
         cout << "|\tPassword:- " << expasswd << endl;
-        userFile.close();
     }
     else
         cout << "|\tOOPS! Password is wrong. Try again next time\n";
-    exPasswordFile.close();
 }
 
-void MainCommands::renameFile()
+void maincommands::renameFile()
 {
-    char ofile[260], nfile[260];
+    char ofile[FILENAME_MAX];
+    char nfile[FILENAME_MAX];
     cout << "|\tEnter the name of the file which you want to rename - ";
     cin.sync();
-    cin.getline(ofile, 260);
+    cin.getline(ofile, FILENAME_MAX);
     cout << "|\tEnter the new name - ";
     cin.sync();
-    cin.getline(nfile, 260);
+    cin.getline(nfile, FILENAME_MAX);
     if (!(rename(ofile, nfile)))
         cout << "|\tSuccessfully changed\n";
     else
         cout << "|\tError\n";
 }
 
-void MainCommands::renameDir()
+void maincommands::renameDir()
 {
-    char odir[260], ndir[260];
+    char odir[FILENAME_MAX];
+    char ndir[FILENAME_MAX];
     cout << "|\tEnter the name of the folder/directory which you want to rename - ";
     cin.sync();
-    cin.getline(odir, 260);
+    cin.getline(odir, FILENAME_MAX);
     cout << "|\tEnter the new name - ";
     cin.sync();
-    cin.getline(ndir, 260);
+    cin.getline(ndir, FILENAME_MAX);
     if (!(rename(odir, ndir)))
         cout << "|\tSuccessfully changed\n";
     else
         cout << "|\tError\n";
 }
 
-void MainCommands::getf()
+void maincommands::getf()
 {
-    char foldername[260];
+    char foldername[FILENAME_MAX];
     printf("|\tEnter the name of the folder or directory first: ");
     cin.sync();
-    cin.getline(foldername, 260);
+    cin.getline(foldername, FILENAME_MAX);
     DIR *dp;
     struct dirent *dirp;
 
-    if ((dp = opendir(foldername)) == NULL)
+    if ((dp = opendir(foldername)) == nullptr)
     {
-        printf("|\tcan't find %s\n", foldername);
+        cout << "|\tcan't find " << foldername << endl;
     }
     else
     {
-        char reciepent[260];
+        char reciepent[FILENAME_MAX];
         printf("|\tEnter the filename or foldername to find: ");
         cin.sync();
-        cin.getline(reciepent, 260);
-        while ((dirp = readdir(dp)) != NULL)
+        cin.getline(reciepent, FILENAME_MAX);
+        while ((dirp = readdir(dp)) != nullptr)
         {
             if (!strcmp(dirp->d_name, reciepent))
-                printf("|\t%s is present in the folder %s\n", dirp->d_name, foldername);
+                cout << "|\t" << dirp->d_name <<" is present in the folder " << foldername << endl;
         }
     }
     closedir(dp);
 }
 
-void MainCommands::findf()
+void maincommands::findf()
 {
-    char word[260];
+    char word[FILENAME_MAX];
     FILE *fptr;
 
     int i = 0, line = 1;
     int confirm;
     int linearray[1000];
 
-    char filename[260];
-    printf("|\tEnter filename: ");
+    char filename[FILENAME_MAX];
+    cout << ("|\tEnter filename: ");
     cin.sync();
-    cin.getline(filename, 260);
+    cin.getline(filename, FILENAME_MAX);
 
-    char str[BUFFER_SIZE];
+    char str[buffersize];
 
     fptr = fopen(filename, "r");
-    if (fptr == NULL)
+    if (fptr == nullptr)
     {
-        printf("|\tCannot open file.\n");
+        cout << ("|\tCannot open file.\n");
     }
     else
     {
-        printf("|\tEnter the word to find: ");
+        cout << ("|\tEnter the word to find: ");
         cin.sync();
-        cin.getline(word, 260);
-        printf("|\tThe word is find in line number:- \n");
-        while (fgets(str, BUFFER_SIZE, fptr) != NULL)
+        cin.getline(word, FILENAME_MAX);
+        cout << ("|\tThe word is find in line number:- \n");
+        while (fgets(str, buffersize, fptr) != nullptr)
         {
             if (strstr(str, word))
             {
                 linearray[i] = line;
                 confirm = 1;
-                printf("|\t%d\n", linearray[i]);
+                cout << "|\t " << linearray[i] << endl;
             }
             else
             {
@@ -486,76 +490,77 @@ void MainCommands::findf()
         }
         if (confirm == 0)
         {
-            printf("|\tActually! eh word is not present.\n");
+            cout << ("|\tActually! eh word is not present.\n");
         }
     }
     fclose(fptr);
 }
 
-void MainCommands::calc()
+void maincommands::calc()
 {
     char type;
-    printf("|\tEnter d for decimal operations and i for integer operation: ");
+    cout << ("|\tEnter d for decimal operations and i for integer operation: ");
     cin.sync();
     cin >> type;
     if (type == 'i')
     {
         cin.sync();
         int a, b;
-        printf("|\tEnter first number: ");
+        cout << ("|\tEnter first number: ");
+        cin.sync();
         cin >> a;
-        printf("|\tEnter second number: ");
+        cout << ("|\tEnter second number: ");
         cin.sync();
         cin >> b;
         char o;
-        printf("|\tEnter operation(+, -, /, *): ");
+        cout << ("|\tEnter operation(+, -, /, *): ");
         cin.sync();
         cin >> o;
         if (o == '+')
         {
-            printf("|\t%d\n\n", a + b);
+            cout << ("|\t%d\n\n", a + b);
         }
         else if (o == '-')
         {
-            printf("|\t%d\n\n", a - b);
+            cout << ("|\t%d\n\n", a - b);
         }
         else if (o == '*')
         {
-            printf("|\t%d\n\n", a * b);
+            cout << ("|\t%d\n\n", a * b);
         }
         else if (o == '/')
         {
-            printf("|\t%d\n\n", a / b);
+            cout << ("|\t%d\n\n", a / b);
         }
     }
     else
     {
         cin.sync();
         float x, y;
-        printf("|\tEnter first number: ");
+        cout << ("|\tEnter first number: ");
         cin >> x;
-        printf("|\tEnter second number: ");
+        cout << ("|\tEnter second number: ");
         cin.sync();
         cin >> y;
         char o;
-        printf("|\tEnter operation(+, -, /, *): ");
+        cout << ("|\tEnter operation(+, -, /, *): ");
         cin.sync();
         cin >> o;
         if (o == '+')
         {
-            printf("|\t%.2f\n\n", x + y);
+            cout << ("|\t%.2f\n\n", x + y);
         }
         else if (o == '-')
         {
-            printf("|\t%.2f\n\n", x - y);
+            cout << ("|\t%.2f\n\n", x - y);
         }
         else if (o == '*')
         {
-            printf("|\t%.2f\n\n", x * y);
+            cout << ("|\t%.2f\n\n", x * y);
         }
         else if (o == '/')
         {
-            printf("|\t%.2f\n\n", x / y);
+            cout << ("|\t%.2f\n\n", x / y);
         }
     }
 }

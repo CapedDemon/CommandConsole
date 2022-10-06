@@ -137,7 +137,7 @@ _Try to use the laterst version which is bug free_
 
 - It will pull the image from the docker hub.
 - When all the things are done it will start the program.
-- It will be like a normal terminal. First of all type 'list' then check that all the files which are there in the github are shown there.
+- It will be like a normal shell. First of all type 'list' then check that all the files which are there in the github are shown there.
 - Don't do anything there or else the software will not work as that is the only working directory.
 - I have made another directory for you all, i.e, home. Go there by using 'ccwd' command.
 - Finally test all the commands.

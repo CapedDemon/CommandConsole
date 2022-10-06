@@ -4,34 +4,33 @@
 #include <string.h>
 #include <time.h>
 #include <queue>
-#include "MainCommands.hpp"
-#include "maincommands.cpp"
+#include "maincommands.hpp"
 #include "Others/cricket.hpp"
 #include "internetthings.cpp"
 
 using namespace std;
 
-// implementation of queue
-queue<string> Q;
-
 class CClass
 {
 public:
-    CClass(int startP)
+    CClass(bool startprogram)
     {
-        CClass::staringProgram = startP;
+        CClass::startprogram = startprogram;
     };
-
+    // implementation of queue
+    queue<string> Q;
+    
+    const double version = 3.5;
     void welcomeStatement();
     void cmdTake();
     int showRuncmdloop();
 
 private:
-    int staringProgram = 0;
+    bool startprogram = false;
     bool runingcmdloop = false;
 
     // intialization to check the time
-    time_t my_time;
+    time_t computertime;
 
     // seeking username and password.
     // Going to make the variables and ask for username and password
@@ -41,9 +40,9 @@ private:
     string rootUsername = "root/userdetails/user.txt";
 
     // checking the file size and logging in
-    bool checkANDlogin()
+    bool CheckAndLogin()
     {
-        bool fDecision;
+        bool finaldecision;
 
         ifstream in_file(rootPassword, ios::binary);
         in_file.seekg(0, ios::end);
@@ -53,7 +52,7 @@ private:
         if (fileSize == 0)
         {
             // another variable to verify the password
-            string verPassword;
+            string verifyPassword;
 
             // we will repeat the process of entering the values
             // until password is correct
@@ -67,10 +66,10 @@ private:
                 getline(cin, password);
 
                 cout << "Verify password - ";
-                getline(cin, verPassword);
+                getline(cin, verifyPassword);
 
                 // verifying
-                if (password == verPassword)
+                if (password == verifyPassword)
                 {
                     ofstream userFile(rootUsername);
                     ofstream userPasswd(rootPassword);
@@ -82,7 +81,7 @@ private:
                     userPasswd.close();
 
                     passLoop = 0;
-                    fDecision = true;
+                    finaldecision = true;
                 }
 
                 else
@@ -95,7 +94,7 @@ private:
                     if (choice == "n")
                     {
                         passLoop = 0;
-                        fDecision = false;
+                        finaldecision = false;
                     }
                 }
             }
@@ -115,13 +114,15 @@ private:
             getline(cin, password);
 
             if (password == exPass)
-                fDecision = true;
-            else
-                fDecision = false;
+            {
+                finaldecision = true;
+            }
+            else {
+                finaldecision = false;}
             userName.close();
             userPasswd.close();
         }
-        return fDecision;
+        return finaldecision;
     }
 };
 
@@ -132,41 +133,42 @@ int CClass::showRuncmdloop()
 
 void CClass ::welcomeStatement()
 {
-    if (CClass::staringProgram == 1)
+    if (CClass::startprogram == true)
     {
-        time(&(CClass::my_time));
+        time(&(CClass::computertime));
         char buf[50];
         cout << "Welcome to Command Console." << endl
              << endl
-             << "Time: " << ctime_r(&(CClass::my_time), buf) << endl
+             << "Time: " << ctime_r(&(CClass::computertime), buf) << endl
              << "(Type help for manual)\n\n";
 
-        bool login = CClass::checkANDlogin();
+        bool login;
+        login = CClass::CheckAndLogin();
         CClass::runingcmdloop = login;
     }
 }
 
 void CClass::cmdTake()
 {
-    if (showRuncmdloop() == false)
-        cout << "Bye";
+    if (showRuncmdloop() == false){
+        cout << "Bye";}
 
     else
     {
-        string cmdStr;
-    MainCommands MC(true);
+        string command;
+        maincommands MC(true);
 
         while (showRuncmdloop())
         {
             cout << "| (:-) " << CClass::username << " (root): [";
             MC.pcd();
             cout << "] $: ";
-            getline(cin, cmdStr);
-            Q.push(cmdStr);
-            if (cmdStr == "quit")
+            getline(cin, command);
+            Q.push(command);
+            if (command == "quit")
                 CClass::runingcmdloop = false;
 
-            else if (cmdStr == "hist")
+            else if (command == "hist")
             {
                 queue<string> q = Q;
 
@@ -177,128 +179,128 @@ void CClass::cmdTake()
                 }
             }
 
-            else if (cmdStr == "cnge")
+            else if (command == "cnge")
             {
                 MC.rootChange();
             }
             
-            else if (cmdStr == "help")
+            else if (command == "help")
             {
                 MC.help();
             }
 
-            else if (cmdStr == "pcwd")
+            else if (command == "pcwd")
             {
                 MC.pcd();
                 cout << endl;
             }
 
-            else if (cmdStr == "list")
+            else if (command == "list")
             {
                 MC.list();
             }
 
-            else if (cmdStr == "clr")
+            else if (command == "clr")
             {
                 MC.clearScreen();
             }
 
-            else if (cmdStr == "ccwd")
+            else if (command == "ccwd")
             {
                 MC.ccwd();
             }
 
-            else if (cmdStr == "time")
+            else if (command == "time")
             {
                 MC.gettime();
             }
 
-            else if (cmdStr == "make")
+            else if (command == "make")
             {
                 MC.make();
             }
 
-            else if (cmdStr == "wrte")
+            else if (command == "wrte")
             {
                 MC.wrte();
             }
 
-            else if (cmdStr == "wrta")
+            else if (command == "wrta")
             {
                 MC.wrta();
             }
 
-            else if (cmdStr == "remo")
+            else if (command == "remo")
             {
                 MC.remo();
             }
 
-            else if (cmdStr == "mkdr")
+            else if (command == "mkdr")
             {
                 MC.mkdr();
             }
 
-            else if (cmdStr == "rmdr")
+            else if (command == "rmdr")
             {
                 MC.rmdr();
             }
 
-            else if (cmdStr == "info")
+            else if (command == "info")
             {
                 MC.info();
             }
 
-            else if (cmdStr == "read")
+            else if (command == "read")
             {
                 MC.read();
             }
 
-            else if (cmdStr == "cfile")
+            else if (command == "cfile")
             {
                 MC.copyfile();
             }
 
-            else if (cmdStr == "sys")
+            else if (command == "sys")
             {
                 int a = MC.info_system();
             }
 
-            else if (cmdStr == "echo")
+            else if (command == "echo")
             {
                 MC.echo();
             }
 
-            else if (cmdStr == "root")
+            else if (command == "root")
             {
                 MC.rootDisplay();
             }
 
-            else if (cmdStr == "rfile")
+            else if (command == "rfile")
             {
                 MC.renameFile();
             }
 
-            else if (cmdStr == "rdr")
+            else if (command == "rdr")
             {
                 MC.renameDir();
             }
 
-            else if (cmdStr == "getf")
+            else if (command == "getf")
             {
                 MC.getf();
             }
 
-            else if (cmdStr == "findf")
+            else if (command == "findf")
             {
                 MC.findf();
             }
 
-            else if (cmdStr == "calc")
+            else if (command == "calc")
             {
                 MC.calc();
             }
 
-            else if (cmdStr == "game")
+            else if (command == "game")
             {
                 char gdec;
                 cout << "Do you want to play the game (y/n) - ";
@@ -318,7 +320,7 @@ void CClass::cmdTake()
                     cout << "Put the right command\n";
             }
 
-            else if (cmdStr == "ipad")
+            else if (command == "ipad")
             {
                 ipad();
             }
@@ -332,7 +334,7 @@ void CClass::cmdTake()
 
 int main()
 {
-    CClass Mainterminal(1);
+    CClass Mainterminal(true);
     Mainterminal.welcomeStatement();
     Mainterminal.cmdTake();
 
