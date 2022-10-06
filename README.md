@@ -113,7 +113,7 @@ All the functions are written in **MainCommands.hpp**
 ### Important:
 
 - Provide the correct command or else it will show "GIVE THE RIGHT COMMAND :}>".
-- Type quit to stop the terminal.
+- Type quit to stop the shell.
 - When changing the directory provide the exact name of the directory.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
