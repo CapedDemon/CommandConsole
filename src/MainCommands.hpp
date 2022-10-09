@@ -22,7 +22,7 @@ private:
 
 public:
     int buffersize = 4096;
-    
+
     maincommands(bool access)
     {
         maincommands::access = access;

@@ -123,7 +123,7 @@ void maincommands::pcd()
     char *tmp;
     tmp = new char[256];
     getcwd(tmp, 256);
-    cout << tmp ;
+    cout << tmp;
 }
 
 void maincommands::list()
@@ -189,7 +189,8 @@ void maincommands::gettime()
     char buf[50];
 
     time(&computertime);
-    printf("|\tThe time is %s |\n", ctime_r(&computertime, buf));
+    cout << "|\tThe time is " << ctime_r(&computertime, buf) << "|\n"
+         << endl;
 }
 
 void maincommands::make()
@@ -437,7 +438,7 @@ void maincommands::getf()
         while ((dirp = readdir(dp)) != nullptr)
         {
             if (!strcmp(dirp->d_name, reciepent))
-                cout << "|\t" << dirp->d_name <<" is present in the folder " << foldername << endl;
+                cout << "|\t" << dirp->d_name << " is present in the folder " << foldername << endl;
         }
     }
     closedir(dp);
@@ -518,25 +519,25 @@ void maincommands::calc()
         cin >> o;
         if (o == '+')
         {
-            cout << ("|\t%d\n\n", a + b);
+            cout << "|\t" << a + b << "\n\n";
         }
         else if (o == '-')
         {
-            cout << ("|\t%d\n\n", a - b);
+            cout << "|\t" << a - b << "\n\n";
         }
         else if (o == '*')
         {
-            cout << ("|\t%d\n\n", a * b);
+            cout << "|\t" << a * b << "\n\n";
         }
         else if (o == '/')
         {
-            cout << ("|\t%d\n\n", a / b);
+            cout << "|\t" << a / b << "\n\n";
         }
     }
     else
     {
         cin.sync();
-        float x, y;
+        double x, y;
         cout << ("|\tEnter first number: ");
         cin >> x;
         cout << ("|\tEnter second number: ");
@@ -548,19 +549,19 @@ void maincommands::calc()
         cin >> o;
         if (o == '+')
         {
-            cout << ("|\t%.2f\n\n", x + y);
+            cout << "|\t" << x + y << "\n\n";
         }
         else if (o == '-')
         {
-            cout << ("|\t%.2f\n\n", x - y);
+            cout << "|\t" << x - y << "\n\n";
         }
         else if (o == '*')
         {
-            cout << ("|\t%.2f\n\n", x * y);
+            cout << "|\t" << x * y << "\n\n";
         }
         else if (o == '/')
         {
-            cout << ("|\t%.2f\n\n", x / y);
+            cout << "|\t" << x / y << "\n\n";
         }
     }
 }
