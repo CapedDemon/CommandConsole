@@ -5,7 +5,8 @@
 #include <time.h>
 #include <queue>
 #include "maincommands.hpp"
-#include "Others/cricket.hpp"
+#include "maincommands.cpp"
+#include "Others/cricket.cpp"
 #include "internetthings.cpp"
 
 using namespace std;
@@ -19,7 +20,7 @@ public:
     };
     // implementation of queue
     queue<string> Q;
-    
+
     const double version = 3.5;
     void welcomeStatement();
     void cmdTake();
@@ -43,10 +44,11 @@ private:
     bool CheckAndLogin()
     {
         bool finaldecision;
+        int fileSize;
 
         ifstream in_file(rootPassword, ios::binary);
         in_file.seekg(0, ios::end);
-        int fileSize = in_file.tellg();
+        fileSize = in_file.tellg();
 
         // new user
         if (fileSize == 0)
@@ -113,12 +115,7 @@ private:
             cout << "Enter the password - ";
             getline(cin, password);
 
-            if (password == exPass)
-            {
-                finaldecision = true;
-            }
-            else {
-                finaldecision = false;}
+            finaldecision = (exPass == password);
             userName.close();
             userPasswd.close();
         }
@@ -150,8 +147,10 @@ void CClass ::welcomeStatement()
 
 void CClass::cmdTake()
 {
-    if (showRuncmdloop() == false){
-        cout << "Bye";}
+    if (showRuncmdloop() == false)
+    {
+        cout << "Bye";
+    }
 
     else
     {
@@ -183,7 +182,7 @@ void CClass::cmdTake()
             {
                 MC.rootChange();
             }
-            
+
             else if (command == "help")
             {
                 MC.help();

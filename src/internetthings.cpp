@@ -36,7 +36,7 @@ void ipad(){
     close(n);
 
     // printing the ipaddress
-    printf("IPv4 address is:    %s\n", arr, inet_ntoa(( (struct sockaddr_in *)&ifr.ifr_addr)->sin_addr));
+    cout << ("IPv4 address is:    %s\n", arr, inet_ntoa(( (struct sockaddr_in *)&ifr.ifr_addr)->sin_addr));
 #endif
 #if defined(_WIN32) || defined(_WIN64)
 #include <winsock.h>
