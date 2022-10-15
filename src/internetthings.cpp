@@ -44,8 +44,8 @@ void ipad(){
 #include <stdlib.h>
 #include <unistd.h>
 #define INFO_BUFFER_SIZE 32767
-    TCHAR infoBuf[INFO_BUFFER_SIZE];
-    DWORD bufCharCount = INFO_BUFFER_SIZE;
+    TCHAR infoBuf[MAX_COMPUTERNAME_LENGTH + 1];
+    DWORD bufCharCount = MAX_COMPUTERNAME_LENGTH;
 
     if (!GetComputerName(infoBuf, &bufCharCount))
         cout << (TEXT("GetComputerName"));
