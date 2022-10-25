@@ -146,7 +146,7 @@ _Try to use the laterst version which is bug free_
 You can clone my repository by executing this:-
 
 ```
-git clone https://github.com/Shreejan-35/CommandConsole.git
+git clone https://github.com/CapedDemon/CommandConsole.git
 ```
 
 **To run CommandConsole in linux/unix run:-**

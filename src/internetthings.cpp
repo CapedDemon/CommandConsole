@@ -39,6 +39,7 @@ void ipad(){
     cout << ("IPv4 address is:    %s\n", arr, inet_ntoa(( (struct sockaddr_in *)&ifr.ifr_addr)->sin_addr));
 #endif
 #if defined(_WIN32) || defined(_WIN64)
+#include <windows.h>
 #include <winsock.h>
 #include <limits.h>
 #include <stdlib.h>
