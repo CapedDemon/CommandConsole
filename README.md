@@ -3,8 +3,7 @@
 ![](https://img.shields.io/readthedocs/cplusplus)
 ![](https://img.shields.io/github/stars/Shreejan-35/CommandConsole)
 ![](https://img.shields.io/github/last-commit/Shreejan-35/CommandConsole)
-
-[![CodeFactor](https://www.codefactor.io/repository/github/shreejan-35/commandconsole/badge)](https://www.codefactor.io/repository/github/shreejan-35/commandconsole)
+[![CodeFactor](https://www.codefactor.io/repository/github/capeddemon/commandconsole/badge)](https://www.codefactor.io/repository/github/capeddemon/commandconsole)
 ![](https://img.shields.io/github/license/Shreejan-35/CommandConsole)
 ![](https://img.shields.io/github/issues/Shreejan-35/CommandConsole)
 
